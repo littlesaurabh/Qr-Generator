@@ -1,0 +1,165 @@
+/* nav */
+
+.navbar {
+  background-color: rgb(38,104,146);
+  color: white;
+}
+
+/* The sidebar menu */
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: rgb(38, 104, 146); /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 13px;
+  color: rgb(215, 217, 221);
+  display: block;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: white;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgb(38,104,146);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: rgb(38,104,146);
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left 0.5s; /* If you want a transition effect */
+  padding: 6px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+
+/*  */
+
+.search {
+  text-align: center;
+  margin: 10%;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid rgb(123, 126, 128);
+  background-color: rgb(84, 88, 90);
+  color: whitesmoke;
+}
+
+small {
+  color: rgb(186, 187, 189);
+  margin: 10%;
+  font-weight: 600;
+}
+
+hr {
+  border: 0.5px solid rgb(186, 187, 189);
+  margin: 10%;
+}
+
+.slideFooter {
+  /* position: absolute;
+      bottom: 0; */
+  background-color: rgb(62, 66, 70);
+  height: 15vh;
+  color: white;
+  padding-top: 10px;
+  margin-top: 100px;
+}
+
+.slideFooter h6 {
+  margin: 0 10%;
+}
+.slideFooter button {
+  margin: 10% 25%;
+  background-color: rgb(38,104,146);
+  color: white;
+}
+
+.dashboard {
+  /* width: 100vw; */
+  height: 90vh;
+  background-color: rgb(247, 247, 247);
+  padding: 0;
+  margin-top: -25px;
+}
+
+.block1 {
+  margin: 3% 3%;
+}
+
+.create {
+  background-color: rgb(147, 182, 64);
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.block2 {
+  border: 2px solid rgb(225, 225, 225);
+  height: 180px;
+  width: 95%;
+  margin: auto;
+  background-color: white;
+  margin-top: 50px;
+  color: rgb(179, 176, 176);
+}
+
+.block3 {
+  margin: 3% 3%;
+}
+.block3 div {
+  /* background-color: white; */
+  text-align: justify;
+  /* margin: 10px; */
+  font-size: 14px;
+}
+.block3 div i {
+  zoom: 2;
+  margin: 5px;
+}
+
+.block3 div span {
+  color: rgb(102, 187, 234);
+}

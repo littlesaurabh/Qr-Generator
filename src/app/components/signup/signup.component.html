@@ -1,0 +1,48 @@
+<nav class="mb-4 navbar navbar-expand-lg ">
+    <a class="navbar-brand  " [routerLink]="['/']">
+
+        <span> &#10132;</span> Back to our website
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+        aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+            aria-controls="collapseExample"></span>
+    </button>
+</nav>
+<section>
+    <div class="d-flex flex-column container align-items-center justify-content-center">
+        <!-- <img src="/assets/logo.svg" width="222" alt="QR Code Generator"> -->
+        <div>
+            <h3 class="text-center">Create, Manage and Track
+                all your QR Codes in one place.
+            </h3>
+            <p class="text-center subtitle">
+                Sign up now and try all features free for 14 days
+            </p>
+        </div>
+        <div>
+            <div class="form-group">
+                <input type="text" [(ngModel)]="name" class="form-control c-form" id="exampleFormControlInput1" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <input type="email" [(ngModel)]="email" class="form-control c-form" id="exampleFormControlInput1" placeholder="Work Email">
+            </div>
+            <div class="form-group">
+                <input type="password" [(ngModel)]="password" class="form-control c-form" name="" id="" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <input type="password" [(ngModel)]="repassword" class="form-control c-form" name="" id="" placeholder="Confirm Password">
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                I agree with
+                <a href="">Terms and Conditions</a>
+                and
+                <a href="">Privacy Policy</a>
+            </div>
+            <button (click)="signUp()" class="btn btn-primary c-btn">SIGN UP NOW</button>
+        </div>
+    
+        <p class="text-center service">A service provided by Egoditor</p>
+    </div>
+</section>

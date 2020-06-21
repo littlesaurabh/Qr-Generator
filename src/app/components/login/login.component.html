@@ -1,0 +1,64 @@
+<nav class="mb-4 navbar navbar-expand-lg ">
+	<a class="navbar-brand  " [routerLink]="['/']">
+
+		<span> &#10132;</span> Back to our website
+	</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+		aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+			aria-controls="collapseExample"></span>
+	</button>
+
+</nav>
+
+<div class="row ">
+
+
+
+	<div class="col-12 my-auto " style="height:70px;">
+		<h2 class="text-center">QR Code Generator<sup>PRO</sup></h2>
+	</div>
+
+
+	<div class="col-md-4 offset-md-4" style="margin-top: 0;">
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Log In</h5>
+
+				<div>
+					<div class="form-group">
+
+						<input type="email" [(ngModel)]="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+							placeholder="E-mail">
+
+					</div>
+					<div class="form-group">
+
+						<input type="password"  [(ngModel)]="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+					</div>
+					<div class="form-check">
+						<input type="checkbox" class="form-check-input" id="exampleCheck1">
+						<label class="form-check-label" for="exampleCheck1">Remember me</label>
+					</div>
+					<button type="submit" id="login" (click)="login()" class="btn  btn-block">LOG IN</button>
+				</div>
+
+				<p>forgot Password ?</p>
+				<p>New User ? Click Here to<a [routerLink]="['/signup']"> Register </a></p>
+				<hr class="style15">
+				<button type="button" class="btn btn-labeled btn-block btn-primary">
+					<span class="btn-label"><i class="glyphicon glyphicon-camera"></i></span>Login with Google</button>
+				<br />
+				<br />
+
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<div class="footer text-center">
+	© QR-Code-Generator.com 2020. 'QR Code' is a trademark of DENSO WAVE INCORPORATED <span>Legal Notice</span>
+
+</div>
+

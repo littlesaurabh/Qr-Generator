@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "qr-codes-generator"
+  },
+  "targets": {
+    "qr-codes-generator": {
+      "hosting": {
+        "qr": [
+          "qr-codes-generator"
+        ]
+      }
+    }
+  }
+}
