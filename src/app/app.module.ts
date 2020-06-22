@@ -18,6 +18,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SuperDashboardComponent } from './components/super-dashboard/super-dashboard.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { environment } from 'src/environments/environment';
+import { QrmenuComponent } from './qrmenu/qrmenu.component';
+import { MobileComponent } from './mobile/mobile.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { environment } from 'src/environments/environment';
     NavbarComponent,
     DashboardComponent,
     SuperDashboardComponent,
-    SignupComponent
+    SignupComponent,
+    QrmenuComponent,
+    MobileComponent
   ],
   imports: [
     BrowserModule,
