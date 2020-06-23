@@ -20,6 +20,19 @@ import { SignupComponent } from './components/signup/signup.component';
 import { environment } from 'src/environments/environment';
 import { QrmenuComponent } from './qrmenu/qrmenu.component';
 import { MobileComponent } from './mobile/mobile.component';
+import { WebsiteComponent } from './website/website.component';
+import { SocialMediaComponent } from './social-media/social-media.component';
+import { CouponsComponent } from './coupons/coupons.component';
+import { BusinessComponent } from './business/business.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { RatingComponent } from './rating/rating.component';
+import { VideoComponent } from './video/video.component';
+import { PdfComponent } from './pdf/pdf.component';
+import { FacebookComponent } from './facebook/facebook.component';
+import { ImagesComponent } from './images/images.component';
+import { Mp3Component } from './mp3/mp3.component';
+import {CreateappComponent} from './createapp/createapp.component';
+import { VcardComponent } from './vcard/vcard.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +44,20 @@ import { MobileComponent } from './mobile/mobile.component';
     SuperDashboardComponent,
     SignupComponent,
     QrmenuComponent,
-    MobileComponent
+    MobileComponent,
+    WebsiteComponent,
+    SocialMediaComponent,
+    CouponsComponent,
+    BusinessComponent,
+    FeedbackComponent,
+    RatingComponent,
+    VideoComponent,
+    PdfComponent,
+    FacebookComponent,
+    ImagesComponent,
+    Mp3Component,
+    CreateappComponent,
+    VcardComponent
   ],
   imports: [
     BrowserModule,
