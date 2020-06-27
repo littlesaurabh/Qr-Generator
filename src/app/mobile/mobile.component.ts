@@ -9,7 +9,10 @@ export class MobileComponent implements OnInit {
 
   constructor() { }
 
+
+
   ngOnInit() {
+  
   }
 
 }
