@@ -1,21 +1,21 @@
-<body class="body">
- 
+<div class="body">
+
   <div class="container-fluid">
-   
-     
+
+
     <div class="row">
-     
+
       <div class="col-md-6 offset-md-1">
-       
+
         <div style="margin-top: 10%;">
           <!-- <input type="text"> -->
-         
+
           <div class="mt-2">
-          
+
             <mat-accordion>
               <mat-expansion-panel (closed)="panelOpenState = true" (opened)="panelOpenState = false">
                 <mat-expansion-panel-header class="bg-dark text-light">
-                  
+
                   <mat-panel-title>
                     Coupon Generation
                   </mat-panel-title>
@@ -76,10 +76,10 @@
                     </div>
                     <mat-divider></mat-divider>
 
-                    <div class="ml-3 font-weight-bold text-center" ><span class="material-icons" >
+                    <div class="ml-3 font-weight-bold text-center"><span class="material-icons">
                         image
                       </span> Image </div>
-                      
+
                     <div> Size </div>
                     <div style="color:red;" *ngIf="message">{{message}}</div>
                     <mat-slider min="50" max="260" step="20.5" value={{ImgSize}} thumbLabel [displayWith]="formatLabel"
@@ -111,35 +111,92 @@
                 </mat-expansion-panel-header>
                 <div class="card">
                   <div class="card-body">
-                    
-<div class="container">
-  <form action="/action_page.php">
-    <label for="fname">Company:</label>
-    <input type="text" id="fname" name="firstname" class="ftext"  placeholder="Your name.." [value]="Company">
 
-    <label for="lname">Headline:</label>
-    <input type="text" id="lname" name="lastname"  class="ftext" placeholder="Your last name..">
-    <label for="subject">Description:</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:80px"></textarea>
+                    <div class="container">
+                      <form action="/action_page.php">
+                        <label for="fname">Company:</label>
+                        <input type="text" id="fname" name="firstname" class="ftext" placeholder="Your name.."
+                          [(ngModel)]="Company">
 
-    <label for="country">Sale Badge: </label>
-    <select id="country" name="country">
-      <option value="australia">50% off</option>
-      <option value="canada">20 % off</option>
-      <option value="usa">2 for 1</option>
-    </select>
+                        <label for="lname">Headline:</label>
+                        <input type="text" id="lname" name="lastname" class="ftext" placeholder="Your last name.."
+                          [(ngModel)]="heading">
+                        <label for="subject">Description:</label>
+                        <textarea id="subject" name="subject" placeholder="Write something.." style="height:80px"
+                          [(ngModel)]="desc"></textarea>
 
-    
-    <!-- <input type="submit" value="Submit"> -->
-  </form>
-</div>
+                        <label for="country">Sale Badge: </label>
+                        <select id="country" name="country">
+                          <option value="australia">50% off</option>
+                          <option value="canada">20 % off</option>
+                          <option value="usa">2 for 1</option>
+                        </select>
+
+
+                        <!-- <input type="submit" value="Submit"> -->
+                      </form>
+                    </div>
                   </div>
                 </div>
               </mat-expansion-panel>
               <!-- <mat-action-row>
                         <button mat-button>Click me</button>
                       </mat-action-row> -->
-                     
+
+            </mat-accordion>
+          </div>
+          <div class="mt-2">
+            <mat-accordion>
+              <mat-expansion-panel (closed)="panelOpenState = true" (opened)="panelOpenState = false">
+                <mat-expansion-panel-header class="bg-dark">
+                  <mat-panel-title class="">
+                    Coupon Generation
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    <span class="material-icons mr-2">
+                      perm_device_information
+                    </span> Basic Information
+
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="card">
+                  <div class="card-body">
+
+                    <div class="container">
+                      <form >
+                        <label for="cname">Coupon Name*:</label>
+                        <input type="text" id="cname" name="cname" class="ftext" placeholder="Your name.."
+                          [(ngModel)]="couponcode">
+
+                        <label for="validity">Valid until*:</label>
+                        <input type="text" id="validity" name="validity" class="ftext" placeholder="Your last name.."
+                          [(ngModel)]="validity">
+                        <label for="tnc">Terms & Conditions:</label>
+                        <textarea id="tnc" name="tnc" placeholder="Mention all T&Cs" style="height:80px"
+                          [(ngModel)]="tnc"></textarea>
+
+                        <label for="web">Website:</label>
+                        <textarea id="web" name="web" placeholder="Type your website here" style="height:80px"
+                          [(ngModel)]="tnc"></textarea>
+
+                       
+                        <!-- <input type="text" name="product" list="productName"/>
+<datalist id="productName">
+    <option value="Pen">Pen</option>
+    <option value="Pencil">Pencil</option>
+    <option value="Paper">Paper</option>
+</datalist> -->
+
+                        <!-- <input type="submit" value="Submit"> -->
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </mat-expansion-panel>
+              <!-- <mat-action-row>
+                        <button mat-button>Click me</button>
+                      </mat-action-row> -->
+
             </mat-accordion>
           </div>
 
@@ -153,38 +210,41 @@
           <!-- <div class="text-center"> -->
           <!-- <div class="content"> -->
 
-          <div class="app">
+          <div class="app" *ngIf="!coupon">
 
             <div class="container main-content">
 
               <div class="card">
                 <div class="card-header">
-               <span> {{Company}}</span>
-                  <span class="material-icons share">
-                    share
-                  </span>
+                  <div class="row">
+                    <div class="col-md-10"><span> {{Company}}</span></div>
+                    <div class="col-md-2">
+                      <span class="material-icons share" style="position:static;">
+                        share
+                      </span></div>
+                  </div>
                 </div>
                 <div class="background" [ngStyle]="{background: backgroundColor}">
                   <div>
                     <img class="img" [style.width.px]="ImgSize" [src]="imgURL" *ngIf="imgURL">
                   </div>
                   <div class="text-center">
-                    <span class="badge badge-primary ">25%</span>
+                    <span class="badge badge1 badge-primary ">25%</span>
                   </div>
 
 
                   <div class="card-body">
-
-                    <p [ngStyle]="{color: fontColor}">Storewide Holiday Sale
-                      Get all of your holiday shopping done early this year! Discounted items on all designer clothing,
-                      bags, and more.
-                    </p>
+                    <h5>{{heading}}</h5>
+                    <span [ngStyle]="{color: fontColor}">
+                      {{desc}}
+                    </span>
 
 
                   </div>
                 </div>
                 <div class="text-center">
-                  <button class="btn btn-block text-light" [ngStyle]="{background: linkColor}">Get Coupon</button>
+                  <button class="btn btn-block text-light" [ngStyle]="{background: linkColor}" (click)="couponc()">Get
+                    Coupon</button>
                 </div>
               </div>
 
@@ -194,6 +254,47 @@
           <!-- </div> -->
           <!-- </div> -->
           <!-- <div class="font-weight-bold text-center mt-3">  QR Code Preview</div> -->
+          <div class="container" style="background-color: rgb(68, 127, 182);height: 100%;" >
+            <div class="text-light">
+              <div class="row ">
+                <div class="col-md-10 c" ><h4> {{Company}}</h4></div>
+                <div class="col-md-2 c">
+                  <span class="material-icons share">
+                    share
+                  </span></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-10 offset-md-1">
+                <div class="card" *ngIf="coupon" style="margin-top: 40px;">
+               
+                  <div class="card-body">
+                  <div class="text-center">
+                    <h4 class="mar1"> Coupon Code</h4>
+                    <h3 class="mar1">{{couponcode}}</h3>
+                 
+                      <div class="mar">
+                        <span class="material-icons font-weight-bold">
+                          access_time
+                          </span>Valid until {{ validity}}
+                      </div>
+                      <button class="badge badge-pill mar" (click)="copyMessage(couponcode)" value="click to copy" ><span class="material-icons">
+                        content_copy
+                        </span>{{btn}}</button>
+                  </div>
+                  
+                       <button class="btn btn-primary btn-block mar" [ngStyle]="{background: linkColor}">
+                         Redeem Code
+                       </button>
+                       <button class="btn btn-block mar1 btn-success" >
+                       View Location
+                       </button>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
 
@@ -201,4 +302,4 @@
     </div>
   </div>
 
-</body>
+</div>

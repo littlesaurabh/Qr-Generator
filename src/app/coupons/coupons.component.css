@@ -1,18 +1,21 @@
-.share{
+/* .share{
 margin-left: 130px;
 /* margin-top: 1px; */
-}
+/* }  */
 .mat-divider{
   margin-bottom: 20px;
 }
 
 
+.c{
+  font-weight: bold;
+  top: 20px;
+}
 
 
 
 
-
-.badge{
+.badge1{
 
   font-size: 16px;
   font-style: normal;
@@ -34,11 +37,22 @@ margin-left: 130px;
   -moz-box-shadow: 0 2px 5px #a4a6a8;
   box-shadow: 0 2px 5px #a4a6a8;
 }
-
+label{
+ font-family:monospace;
+}
 .material-icons {
   vertical-align:top;
 }
-
+.mar{
+  margin-top: 40px;
+}
+.mar1{
+  margin-top: 20px;
+}
+h3{
+color: rgb(233, 30, 99);
+font-weight: bolder;
+}
 .img{
   width: 260px;
   height: 140px;
@@ -61,6 +75,7 @@ margin-left: 130px;
     /* background-color: #5A6870; */
     background-color: lightgrey;
     /* color: #424242; */
+    height: 100%;
 }
 .drop{
     margin-top: 20px;
