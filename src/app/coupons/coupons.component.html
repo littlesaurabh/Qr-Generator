@@ -1,14 +1,39 @@
 <div class="body">
 
+
+
+
   <div class="container-fluid">
 
 
     <div class="row">
 
       <div class="col-md-6 offset-md-1">
+        <div>
 
-        <div style="margin-top: 10%;">
-          <!-- <input type="text"> -->
+          <div style="margin-top: 10%;">
+            <!-- <input type="text"> -->
+
+            <!-- <mat-form-field>
+            <input matInput placeholder="label" value="value">
+          </mat-form-field> -->
+            <!-- <div class="text-center"> -->
+
+            <!-- </div> -->
+
+          </div>
+          <div class="text-center">
+            <mat-form-field class="example-form-field" style="width: 400px;">
+
+              <mat-label><span class="material-icons mr-2">
+                  local_offer
+                </span> Coupon Name</mat-label>
+              <input matInput type="text" [(ngModel)]="cname">
+              <button mat-button *ngIf="cname" matSuffix mat-icon-button aria-label="Clear" (click)="cname=''">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
 
           <div class="mt-2">
 
@@ -31,22 +56,32 @@
                       colorize
                     </i> Choose Colors</div>
                   <div class="card-body">
-                    <div class="sidebar">
+                   
 
+            
+
+          
+                        <input type="color" name="" id="" class="form-control" [(ngModel)]="backgroundColor">
+                  <app-color-picker [color]="backgroundColor" [heading]="'Background'"
+                  (event)="setColor('background', $event)"></app-color-picker>
+                
+             
+
+                       
+
+                   
                       <div class="picker">
-
-                        <app-color-picker [color]="backgroundColor" [heading]="'Background'"
-                          (event)="setColor('background', $event)"></app-color-picker>
-
+                        <input type="color" name="" id="" class="form-control" [(ngModel)]="fontColor">
                         <app-color-picker [color]="fontColor" [heading]="'Font'" (event)="setColor('font', $event)">
                         </app-color-picker>
                       </div>
 
                       <div class="picker">
+                        <input type="color" name="" id="" class="form-control" [(ngModel)]="linkColor">
                         <app-color-picker [color]="linkColor" [heading]="'Links'" (event)="setColor('link', $event)">
                         </app-color-picker>
                       </div>
-                    </div>
+               
 
                     <div class="color-picker">
                       <div class="summary-info" (click)="toggleColors()">
@@ -113,24 +148,26 @@
                   <div class="card-body">
 
                     <div class="container">
-                      <form action="/action_page.php">
+                      <form >
                         <label for="fname">Company:</label>
-                        <input type="text" id="fname" name="firstname" class="ftext" placeholder="Your name.."
+                        <input type="text" id="fname" name="firstname" class="ftext" placeholder="Your Company's name.."
                           [(ngModel)]="Company">
 
                         <label for="lname">Headline:</label>
-                        <input type="text" id="lname" name="lastname" class="ftext" placeholder="Your last name.."
+                        <input type="text" id="lname" name="lastname" class="ftext" placeholder="Title"
                           [(ngModel)]="heading">
                         <label for="subject">Description:</label>
-                        <textarea id="subject" name="subject" placeholder="Write something.." style="height:80px"
-                          [(ngModel)]="desc"></textarea>
+                        <textarea id="subject" name="subject" placeholder="Write something about coupon"
+                          style="height:80px" [(ngModel)]="desc"></textarea>
 
-                        <label for="country">Sale Badge: </label>
-                        <select id="country" name="country">
+                        <label for="country">Offer: </label>
+                        <input type="text" id="offer" name="offer" class="ftext" placeholder="Type Offer Here"
+                        [(ngModel)]="offer">
+                        <!-- <select id="country" name="country">
                           <option value="australia">50% off</option>
                           <option value="canada">20 % off</option>
                           <option value="usa">2 for 1</option>
-                        </select>
+                        </select> -->
 
 
                         <!-- <input type="submit" value="Submit"> -->
@@ -154,8 +191,8 @@
                   </mat-panel-title>
                   <mat-panel-description>
                     <span class="material-icons mr-2">
-                      perm_device_information
-                    </span> Basic Information
+                      local_offer
+                    </span> Coupon Information
 
                   </mat-panel-description>
                 </mat-expansion-panel-header>
@@ -163,13 +200,13 @@
                   <div class="card-body">
 
                     <div class="container">
-                      <form >
+                      <form>
                         <label for="cname">Coupon Name*:</label>
                         <input type="text" id="cname" name="cname" class="ftext" placeholder="Your name.."
                           [(ngModel)]="couponcode">
 
                         <label for="validity">Valid until*:</label>
-                        <input type="text" id="validity" name="validity" class="ftext" placeholder="Your last name.."
+                        <input type="date" id="validity" name="validity" class="ftext" placeholder="Your last name.."
                           [(ngModel)]="validity">
                         <label for="tnc">Terms & Conditions:</label>
                         <textarea id="tnc" name="tnc" placeholder="Mention all T&Cs" style="height:80px"
@@ -177,9 +214,9 @@
 
                         <label for="web">Website:</label>
                         <textarea id="web" name="web" placeholder="Type your website here" style="height:80px"
-                          [(ngModel)]="tnc"></textarea>
+                          [(ngModel)]="web"></textarea>
 
-                       
+
                         <!-- <input type="text" name="product" list="productName"/>
 <datalist id="productName">
     <option value="Pen">Pen</option>
@@ -202,17 +239,35 @@
 
         </div>
       </div>
-      <div class="offset-md-2 bg-light">
+      
+      <div class="col-md- 2 offset-md-1">
         <!-- <mobile></mobile> -->
 
-
-        <div class="smartphone">
+      
+        <!-- <button class="badge badge-pill badge-primary"></button>
+          <button class="badge badge-pill badge-primary">QR Code</button>
+        </span> -->
+      
+       
+       <div class="card-body" style="position:fixed; " >
+       <!-- <div class="form-inline">
+        <div class="box-3 ">
+          <div class="btn3 btn-three">
+            <span (click)="change2()" >{{btn1}}</span>
+            
+          </div>
+        </div>
+      
+       </div> -->
+       
+        <div class="smartphone" style="background-color: rgb(68, 127, 182);position:fixed;" >
+          
           <!-- <div class="text-center"> -->
           <!-- <div class="content"> -->
+           <div *ngIf="btn1=='QR Code'">
+          <div *ngIf="!coupon">
 
-          <div class="app" *ngIf="!coupon">
-
-            <div class="container main-content">
+            <div class="container main-content mt-4 ">
 
               <div class="card">
                 <div class="card-header">
@@ -229,7 +284,7 @@
                     <img class="img" [style.width.px]="ImgSize" [src]="imgURL" *ngIf="imgURL">
                   </div>
                   <div class="text-center">
-                    <span class="badge badge1 badge-primary ">25%</span>
+                    <span class="badge badge1 badge-primary "> {{offer}}</span>
                   </div>
 
 
@@ -254,10 +309,15 @@
           <!-- </div> -->
           <!-- </div> -->
           <!-- <div class="font-weight-bold text-center mt-3">  QR Code Preview</div> -->
-          <div class="container" style="background-color: rgb(68, 127, 182);height: 100%;" >
+        
+          <div class="container" style="background-color: rgb(68, 127, 182);height: 100%;" *ngIf="coupon">
+          
             <div class="text-light">
+              
               <div class="row ">
-                <div class="col-md-10 c" ><h4> {{Company}}</h4></div>
+                <div class="col-md-10 c">
+                  <h4> {{Company}}</h4>
+                </div>
                 <div class="col-md-2 c">
                   <span class="material-icons share">
                     share
@@ -267,39 +327,56 @@
             <div class="row">
               <div class="col-md-10 offset-md-1">
                 <div class="card" *ngIf="coupon" style="margin-top: 40px;">
-               
+
                   <div class="card-body">
-                  <div class="text-center">
-                    <h4 class="mar1"> Coupon Code</h4>
-                    <h3 class="mar1">{{couponcode}}</h3>
-                 
+                    <div class="text-center">
+                      <h4 class="mar1"> Coupon Code</h4>
+                      <h3 class="mar1">{{couponcode}}</h3>
+
                       <div class="mar">
                         <span class="material-icons font-weight-bold">
                           access_time
-                          </span>Valid until {{ validity}}
+                        </span>Valid until {{ validity}}
                       </div>
-                      <button class="badge badge-pill mar" (click)="copyMessage(couponcode)" value="click to copy" ><span class="material-icons">
-                        content_copy
+                      <button class="badge badge-pill mar" (click)="copyMessage(couponcode)" value="click to copy"><span
+                          class="material-icons">
+                          content_copy
                         </span>{{btn}}</button>
-                  </div>
-                  
-                       <button class="btn btn-primary btn-block mar" [ngStyle]="{background: linkColor}">
-                         Redeem Code
-                       </button>
-                       <button class="btn btn-block mar1 btn-success" >
-                       View Location
-                       </button>
-                   
+                    </div>
+
+                    <button class="btn btn-primary btn-block mar" [ngStyle]="{background: linkColor}">
+                      <a (click)="goToLink()"> Redeem Code</a>
+                    </button>
+                    <button class="btn btn-block mar1 btn-success" (click)="couponc()">
+                      View Description
+                    </button>
+
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-
+        <div  *ngIf="btn1!='QR Code'" class="text-center"> 
+          <img class="img" src="https://pngimg.com/uploads/qr_code/qr_code_PNG6.png" alt="">
+       <h2>   Scan this QR Code to preview</h2>
+<p>You can customize the design of your
+  QR Code in the next step.</p>
+        </div>
+        </div>
+        
+       
+       
+       </div>
+   
+        <!-- <button mat-flat-button style="margin-top: 610px; margin-left: 110px;" class="round" color="primary" (click)="change2()">QR Code</button> -->
+        <button style="margin-top: 612px; margin-left: 160px;position: fixed;" mat-flat-button class="round" color="accent" (click)="change2()">{{btn1}}</button>
+ 
+  
       </div>
+     
     </div>
+   
   </div>
 
 </div>

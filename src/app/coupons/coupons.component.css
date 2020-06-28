@@ -55,7 +55,7 @@ font-weight: bolder;
 }
 .img{
   width: 260px;
-  height: 140px;
+  height: auto;
 
 }
 .mat-form-field + .mat-form-field {
@@ -70,12 +70,13 @@ font-weight: bolder;
   .example-full-width {
     width: 100%;
   }
+
 .body{
     font-family: "Maison Neue",sans-serif;
     /* background-color: #5A6870; */
     background-color: lightgrey;
     /* color: #424242; */
-    height: 100%;
+    height: 250%;
 }
 .drop{
     margin-top: 20px;
@@ -83,10 +84,11 @@ font-weight: bolder;
 mat-panel-title,mat-panel-description{
   color: white;
 }
+
 .app {
   background: #f1f1f1;
-  height: 100vh;
-  padding-top: 100px;
+  /* height: 100vh; */
+  /* padding-top: 100px; */
 }
 
 .container {
@@ -123,7 +125,6 @@ mat-panel-title,mat-panel-description{
   border-top-width: 60px;
   border-bottom-width: 60px;
   border-radius: 36px;
-
 }
 
 /* The horizontal line on the top of the device */
@@ -138,7 +139,6 @@ mat-panel-title,mat-panel-description{
   transform: translate(-50%, -50%);
   background: #333;
   border-radius: 10px;
-  
 }
 
 /* The circle on the bottom of the device */
@@ -152,20 +152,15 @@ mat-panel-title,mat-panel-description{
   bottom: -65px;
   transform: translate(-50%, -50%);
   background: #333;
+  /* content: "CLik"; */
   border-radius: 50%;
 }
 
 /* The screen (or content) of the device */
 .smartphone .content {
-  width: 460px;
+  width: 360px;
   height: 640px;
   background: white;
-}
-.app {
-  background:inherit;
-  height: 100vh;
-  padding-top: 50px;
-  width: 100%;
 }
 
 .container {
@@ -191,10 +186,69 @@ mat-panel-title,mat-panel-description{
   resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
 }
 
+.round{
+  border-radius: 20px;
+  background-color:blue;
+}
+
 
 /* Add a background color and some padding around the form */
 /* .container {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
+} */
+
+/* @import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
+
+
+.box-3 { background-color:rgb(68, 127, 182) }
+
+.btn3 {
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
+    width: 250px;
+    cursor: pointer;
+    
+}
+
+
+
+.btn-three {
+    color: #FFF;
+    transition: all 0.5s;
+    position: relative;
+}
+.btn-three::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255,255,255,0.1);
+    transition: all 0.3s;
+}
+.btn-three:hover::before {
+    opacity: 0 ;
+    transform: scale(0.5,0.5);
+}
+.btn-three::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid rgba(255,255,255,0.5);
+    transform: scale(1.2,1.2);
+}
+.btn-three:hover::after {
+    opacity: 1;
+    transform: scale(1,1);
 } */
