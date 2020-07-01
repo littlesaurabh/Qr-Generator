@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+import { CouponService } from './coupon.service';
 
 @Component({
   selector: 'app-coupons',
@@ -7,7 +8,7 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 })
 export class CouponsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private couponService: CouponService) { }
 
   public backgroundColor: string;
   public fontColor: string;
@@ -28,6 +29,7 @@ export class CouponsComponent implements OnInit {
   web:any="https://www.amazon.com/"
   cname:any=""
   btn1:any="QR Code";
+  image;
   ngOnInit() {
     this.backgroundColor = '#fff';
     this.fontColor = '#222';
@@ -118,5 +120,42 @@ export class CouponsComponent implements OnInit {
       this.imgURL = reader.result;
     }
   
+  }
+
+  changeFile(e) {
+    console.log(e.target);
+    if (e.target.name === 'image') {
+      this.image = e.target.files[0]
+    }
+  }
+
+  navigate() {
+    const data = {
+      'user': '5ef247c92eafbd1ed045c9d7',
+      'coupon_name': this.cname,
+      'design_color_background': this.backgroundColor,
+      'design_color_text': this.fontColor,
+      'design_color_button': this.linkColor,
+      'company': this.Company,
+      'headline': this.heading,
+      'description': this.desc,
+      'sale_badge': this.offer,
+      'startDate': this.validity,
+      'terms_and_conditions': this.tnc,
+      'website_url': this.web,
+      'coupon_code': this.couponcode
+    }
+
+    const formData = new FormData();
+    Object.keys(data).forEach(key => formData.append(key, data[key]));
+
+    formData.append('image', this.image);
+
+    this.couponService.saveCoupon(formData).subscribe(data => {
+      console.log(data)
+    }, err => {
+      console.log(err)
+    })
+    
   }
 }

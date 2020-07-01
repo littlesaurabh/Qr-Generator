@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 // emailAuth
 import { AngularFireModule } from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth';
@@ -66,6 +67,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { ReactiveFormsModule} from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { ColorPickerComponent } from './color-picker/color-picker.component';
+import { CouponComponent } from './preview/coupon/coupon.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,13 +92,15 @@ import { ColorPickerComponent } from './color-picker/color-picker.component';
     Mp3Component,
     CreateappComponent,
     VcardComponent,
-    ColorPickerComponent
+    ColorPickerComponent,
+    CouponComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule, // required animations module
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     MatCheckboxModule,
