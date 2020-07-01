@@ -1,1 +1,45 @@
-<p>website works!</p>
+<div class="body">
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col-md-6 offset-md-2 mt-5">
+                <mat-form-field class="example-form-field" style="width: 400px;">
+
+                    <mat-label><span class="material-icons mr-2">
+                        local_offer
+                      </span> Coupon Name</mat-label>
+                    <input matInput type="text" [(ngModel)]="cname">
+                    <button mat-button *ngIf="cname" matSuffix mat-icon-button aria-label="Clear" (click)="cname=''">
+                      <mat-icon>close</mat-icon>
+                    </button>
+                  </mat-form-field>
+               
+                    <div class="card mt-5">
+                        <div class="card-header bg-dark text-light">
+                            <h4><span class="material-icons mr-2 font-weight-bold">
+                                edit
+                                </span>Enter your website address</h4>
+                        </div>
+                        <div class="card-body">
+                            <p>Type in the website to link with your QR Code</p>
+                          
+                                   
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Website</mat-label>
+                                    <input matInput placeholder="www.google.com" value="">
+                                  </mat-form-field>
+                            
+                        </div>
+                    </div>
+             
+            </div>
+            <div class="col-md-2">
+                <div class="mobile1">
+
+                    <mobile></mobile>
+                </div>
+                       
+            </div>
+        </div>
+        
+    </div>
+</div>

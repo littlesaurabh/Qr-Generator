@@ -38,7 +38,7 @@
           <div class="mt-2">
 
             <mat-accordion>
-              <mat-expansion-panel (closed)="panelOpenState = true" (opened)="panelOpenState = false">
+              <mat-expansion-panel (closed)="panelOpenState = false" (opened)="panelOpenState = true">
                 <mat-expansion-panel-header class="bg-dark text-light">
 
                   <mat-panel-title>
@@ -238,9 +238,12 @@
           </div>
 
         </div>
+        <div class="footer text-center">
+          <button class="btn btn2 mt-5" (click)="nagivate()">Next</button>
+      </div>
       </div>
       
-      <div class="col-md- 2 offset-md-1">
+      <div class="col-md- 2 offset-md-1 mobile">
         <!-- <mobile></mobile> -->
 
       
@@ -353,6 +356,7 @@
 
                   </div>
                 </div>
+                
               </div>
             </div>
           </div>

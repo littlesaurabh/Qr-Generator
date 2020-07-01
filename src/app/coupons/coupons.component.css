@@ -190,7 +190,37 @@ mat-panel-title,mat-panel-description{
   border-radius: 20px;
   background-color:blue;
 }
-
+@media screen and (max-width: 600px) {
+  .mobile {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+  }
+  .body{
+    height: 100%;
+  }
+ 
+}
+.btn1:hover {
+  -webkit-transform: scale(1.1);
+  border:  1px solid black;
+}
+.btn1{
+    /* width: 20px; */
+}
+.btn2{
+  margin-bottom: 0px;
+ background-color: #90c52d;
+ width: 25%;
+ font-size: 20px;
+ font-weight: bold;
+}
+.btn2:hover{
+ -webkit-transform: scale(1.1);
+}
 
 /* Add a background color and some padding around the form */
 /* .container {

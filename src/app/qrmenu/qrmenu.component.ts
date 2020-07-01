@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-qrmenu',
   templateUrl: './qrmenu.component.html',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QrmenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router){}
   // {path:"mp3",component:Mp3Component},
   // {path:"business",component:BusinessComponent},
   // {path:"coupons",component:CouponsComponent},
@@ -134,5 +134,13 @@ export class QrmenuComponent implements OnInit {
   ]
   ngOnInit() {
   }
-
+ url:any;
+  nav(url){
+    console.log(url)
+    this.url=url;
+    // this.router.navigate([url]);
+  }
+  nagivate(){
+    this.router.navigate([this.url]);
+  }
 }

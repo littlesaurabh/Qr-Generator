@@ -3,6 +3,12 @@
     -webkit-transform: scale(1.1);
     border:  1px solid black;
   }
+
+  .cb1:hover{
+    -webkit-transform: scale(1.1);
+    border:  1px solid black;
+  }
+  
   .btn1{
       /* width: 20px; */
   }
@@ -73,3 +79,15 @@
  .btn2:hover{
   -webkit-transform: scale(1.1);
  }
+ @media screen and (max-width: 600px) {
+  .mobile1 {
+    visibility: hidden;
+    /* clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%; */
+    display: none;
+  }
+  
+ 
+}
