@@ -9,6 +9,6 @@ export class CouponService {
   constructor(private http: HttpClient) { }
 
   getCouponData(id) {
-    return this.http.get("http://localhost:5555/coupon/preview/" + id);
+    return this.http.get("https://whispering-thicket-97767.herokuapp.com/coupon/preview/" + id);
   }
 }
