@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-pdf',
-  templateUrl: './pdf.component.html',
-  styleUrls: ['./pdf.component.css']
+  selector: 'app-pdfv',
+  templateUrl: './pdfv.component.html',
+  styleUrls: ['./pdfv.component.css']
 })
-export class PdfComponent implements OnInit {
+export class PdfvComponent implements OnInit {
 
-  constructor() { }
 
   public backgroundColor: string;
   public fontColor: string;
@@ -137,5 +136,4 @@ export class PdfComponent implements OnInit {
     // })
     
   }
-
 }

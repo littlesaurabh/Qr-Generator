@@ -69,6 +69,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ColorPickerComponent } from './color-picker/color-picker.component';
 import { CouponComponent } from './preview/coupon/coupon.component';
 import { Mp3PComponent } from './preview/mp3-p/mp3-p.component';
+import { PdfvComponent } from './preview/pdfv/pdfv.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -95,7 +96,8 @@ import { Mp3PComponent } from './preview/mp3-p/mp3-p.component';
     VcardComponent,
     ColorPickerComponent,
     CouponComponent,
-    Mp3PComponent
+    Mp3PComponent,
+    PdfvComponent
   ],
   imports: [
     BrowserModule,
