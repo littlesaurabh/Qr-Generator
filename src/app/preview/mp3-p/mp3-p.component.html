@@ -1,0 +1,70 @@
+<!-- <mat-progress-bar *ngIf="!data" mode="indeterminate"></mat-progress-bar>
+<mat-spinner class="spinner" *ngIf="!data"></mat-spinner> -->
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-4 offset-md-4">
+        <div class="card-body" >
+
+            <!-- <div class="text-center"> -->
+            <!-- <div class="content"> -->
+                <mat-spinner class="spinner" *ngIf="spinner"></mat-spinner>
+            <div *ngIf="!spinner">
+                <div >
+        
+                   
+        
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-md-10"><span> {{title}}</span></div>
+                                    <div class="col-md-2">
+                                        <span class="material-icons share" style="position:static;">
+                                            share
+                                        </span></div>
+                                </div>
+                            </div>
+                            <div class="background" [ngStyle]="{background: backgroundColor}">
+                                <div>
+                                    <img class="img" [style.width.px]="ImgSize" [src]="imgURL"
+                                        *ngIf="imgURL">
+                                </div>
+                            
+        
+                                <div class="card-body">
+                                    <h5 class="text-center font" [ngStyle]="{color: fontColor}">{{title}}</h5>
+                                    <div [ngStyle]="{color: fontColor}" class="text-center font2">
+                                        {{info}}
+                                        
+                                    </div>
+        
+                                    
+                                      
+                                </div>
+                                
+                            </div>
+                            <div class="text-center">
+                                <audio controls>
+                                    <source src="mp3" type="audio/ogg">
+                        
+                                  </audio>
+                            </div>
+                            <div class="text-center pt-4">
+                                
+                                <button class="btn btn-block text-light" [ngStyle]="{background: linkColor}"
+                                    (click)="couponc()">{{btn}}</button>
+                            </div>
+                            
+                        </div>
+                    
+        
+                    
+                    <div class="pt-1 text-center font">{{web}}</div>
+                </div>
+        
+            
+            </div>
+        
+        </div>
+      </div>
+  </div>
+</div>

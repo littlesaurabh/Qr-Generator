@@ -22,6 +22,7 @@ import { CreateappComponent } from './createapp/createapp.component'
 import { FacebookComponent } from './facebook/facebook.component'
 import { VcardComponent } from './vcard/vcard.component'
 import { CouponComponent } from './preview/coupon/coupon.component';
+import {Mp3PComponent} from'./preview/mp3-p/mp3-p.component'
 // import {RatingComponent0}
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -46,7 +47,8 @@ const routes: Routes = [
   { path: "createapp", component: CreateappComponent },
   { path: "facebook", component: FacebookComponent },
   { path: "vcard", component: VcardComponent },
-  { path: "preview/coupon/:id", component: CouponComponent }
+  { path: "preview/coupon/:id", component: CouponComponent },
+  { path: "preview/mp3/:id", component:Mp3PComponent}
 ];
 
 @NgModule({

@@ -68,6 +68,7 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { ColorPickerComponent } from './color-picker/color-picker.component';
 import { CouponComponent } from './preview/coupon/coupon.component';
+import { Mp3PComponent } from './preview/mp3-p/mp3-p.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -93,7 +94,8 @@ import { CouponComponent } from './preview/coupon/coupon.component';
     CreateappComponent,
     VcardComponent,
     ColorPickerComponent,
-    CouponComponent
+    CouponComponent,
+    Mp3PComponent
   ],
   imports: [
     BrowserModule,
