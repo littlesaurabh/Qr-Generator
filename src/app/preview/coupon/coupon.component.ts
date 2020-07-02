@@ -18,6 +18,12 @@ export class CouponComponent implements OnInit {
   coupon:any=false;
   Coupon:any="Coupon"
   btn:any="Copy Code"
+  backgroundColor:any
+  fontColor:any
+  linkColor:any
+  image:any="https://whispering-thicket-97767.herokuapp.com";
+// https://whispering-thicket-97767.herokuapp.com/5fgsX7luQM-1593627024656.jpg";
+
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.id = params.get('id')
@@ -41,6 +47,12 @@ export class CouponComponent implements OnInit {
       console.log("data1",data);
     this.data1=data
       this.data=this.data1.response.data
+      this.backgroundColor=this.data.design.colors.background
+      this.fontColor=this.data.design.colors.text
+      this.linkColor=this.data.design.colors.button
+      this.image=this.image+"/"+this.data.design.image
+      console.log(this.image)
+
     }, err => {
       console.log(err)
     })

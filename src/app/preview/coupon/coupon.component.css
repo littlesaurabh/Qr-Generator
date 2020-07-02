@@ -22,6 +22,11 @@
     vertical-align:top;
    
   }
+  .img{
+    width: 260px;
+    height: auto;
+  
+  }
   .badge1{
 
     font-size: 16px;
