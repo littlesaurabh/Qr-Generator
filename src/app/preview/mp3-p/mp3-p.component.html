@@ -13,10 +13,10 @@
         
                    
         
-                        <div class="card">
+                        <div class="card" *ngIf="data">
                             <div class="card-header">
                                 <div class="row">
-                                    <div class="col-md-10"><span> {{title}}</span></div>
+                                    <div class="col-md-10"><span> {{data.title}}</span></div>
                                     <div class="col-md-2">
                                         <span class="material-icons share" style="position:static;">
                                             share
@@ -31,9 +31,9 @@
                             
         
                                 <div class="card-body">
-                                    <h5 class="text-center font" [ngStyle]="{color: fontColor}">{{title}}</h5>
+                                    <h5 class="text-center font" [ngStyle]="{color: fontColor}">{{data.title}}</h5>
                                     <div [ngStyle]="{color: fontColor}" class="text-center font2">
-                                        {{info}}
+                                        {{data.desc}}
                                         
                                     </div>
         
@@ -44,7 +44,7 @@
                             </div>
                             <div class="text-center">
                                 <audio controls>
-                                    <source src="mp3" type="audio/ogg">
+                                    <source [src]="mp3" type="audio/ogg">
                         
                                   </audio>
                             </div>

@@ -54,8 +54,8 @@
 										<div class="container">
 									
 												<label for="fname">Mp3:</label>
-												<input type="file" id="mp3" name="mp3" class="ftext"
-													placeholder="Your audio here..." [(ngModel)]="mp3"
+												<input type="file" id="mp3" (change)="changeFile($event)" name="mp3" class="ftext"
+													placeholder="Your audio here..." 
 													style="color: blue; border: 2px solid black;">
 							
 										

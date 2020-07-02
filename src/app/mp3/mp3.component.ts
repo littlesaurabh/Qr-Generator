@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Mp3Service } from './mp3.service';
 
 @Component({
   selector: 'app-mp3',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Mp3Component implements OnInit {
 
-  constructor() { }
+  constructor(private mp3Service: Mp3Service) { }
 
 
   public backgroundColor: string;
@@ -32,7 +33,7 @@ export class Mp3Component implements OnInit {
   web:any="https://www.amazon.com/"
   cname:any=""
   btn1:any="QR Code";
-  image;
+  logo;
   img1:any="";
   data:any;
   spinner=false
@@ -132,43 +133,41 @@ export class Mp3Component implements OnInit {
   changeFile(e) {
     console.log(e.target);
     if (e.target.name === 'image') {
-      this.image = e.target.files[0]
+      this.logo = e.target.files[0]
+    } else  if (e.target.name === 'mp3') {
+      this.mp3 = e.target.files[0]
     }
   }
 
   navigate() {
-    // this.spinner=true
-    // this.img1=""
-    // const data = {
-    //   'user': '5ef247c92eafbd1ed045c9d7',
-    //   'coupon_name': this.cname,
-    //   'design_color_background': this.backgroundColor,
-    //   'design_color_text': this.fontColor,
-    //   'design_color_button': this.linkColor,
-    //   'company': this.Company,
-    //   'headline': this.heading,
-    //   'description': this.desc,
-    //   'sale_badge': this.offer,
-    //   'startDate': this.validity,
-    //   'terms_and_conditions': this.tnc,
-    //   'website_url': this.web,
-    //   'coupon_code': this.couponcode
-    // }
+    this.spinner=true
+    this.img1=""
+    const data = {
+      'user': '5ef247c92eafbd1ed045c9d7',
+      'qrname': this.cname,
+      'color_background': this.backgroundColor,
+      'color_text': this.fontColor,
+      'color_button': this.linkColor,
+      'title': this.title,
+      'desc': this.desc,
+      'website': this.web
+    }
 
-    // const formData = new FormData();
-    // Object.keys(data).forEach(key => formData.append(key, data[key]));
+    const formData = new FormData();
+    Object.keys(data).forEach(key => formData.append(key, data[key]));
 
-    // formData.append('image', this.image);
+    formData.append('logo', this.logo);
+    formData.append('mp3', this.mp3);
 
-    // this.couponService.saveCoupon(formData).subscribe(data => {
-    //   console.log(data)
-    //   this.data=data
-    //   this.img1=this.data.response.data
-    //   this.spinner=false
-    // }, err => {
-    //   console.log(err)
-    //   this.spinner=false
-    // })
+    this.mp3Service.saveMp3(formData).subscribe(data => {
+      console.log(data)
+      this.data=data
+      this.img1=this.data.response.data
+      this.spinner=false
+    }, err => {
+      console.log(err)
+      this.spinner=false
+    })
     
   }
 

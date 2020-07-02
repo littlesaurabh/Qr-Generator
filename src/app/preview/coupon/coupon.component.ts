@@ -21,7 +21,7 @@ export class CouponComponent implements OnInit {
   backgroundColor:any
   fontColor:any
   linkColor:any
-  image:any="https://whispering-thicket-97767.herokuapp.com";
+  image:any="https://whispering-thicket-97767.herokuapp.com/";
 // https://whispering-thicket-97767.herokuapp.com/5fgsX7luQM-1593627024656.jpg";
 
   ngOnInit() {
