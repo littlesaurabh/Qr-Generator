@@ -46,7 +46,7 @@ const routes: Routes = [
   { path: "createapp", component: CreateappComponent },
   { path: "facebook", component: FacebookComponent },
   { path: "vcard", component: VcardComponent },
-  { path: "coupon/:id", component: CouponComponent }
+  { path: "preview/coupon/:id", component: CouponComponent }
 ];
 
 @NgModule({

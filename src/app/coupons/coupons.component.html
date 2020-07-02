@@ -1,6 +1,5 @@
+<mat-progress-bar *ngIf="spinner" mode="indeterminate"></mat-progress-bar>
 <div class="body">
-
-
 
 
 	<div class="container-fluid">
@@ -249,8 +248,10 @@
 
 				</div>
 				<div class="footer text-center">
-					<button class="btn btn2 mt-5" (click)="navigate()">Next</button>
+					<button class="btn btn2 mt-5 mb-2" (click)="navigate()">Next</button>
+					
 				</div>
+			
 			</div>
 
 			<div class="col-md- 2 offset-md-1 mobile">
@@ -277,7 +278,8 @@
 
 						<!-- <div class="text-center"> -->
 						<!-- <div class="content"> -->
-						<div *ngIf="btn1=='QR Code'">
+							<mat-spinner class="spinner" *ngIf="spinner"></mat-spinner>
+						<div *ngIf="btn1=='QR Code'&&!spinner">
 							<div *ngIf="!coupon">
 
 								<div class="container main-content mt-4 ">
@@ -365,7 +367,7 @@
 													[ngStyle]="{background: linkColor}">
 													<a (click)="goToLink()"> Redeem Code</a>
 												</button>
-												<button class="btn btn-block mar1 btn-success" (click)="couponc()">
+												<button class="btn btn-block mar1 btn-success" (click)="couponc()" >
 													View Description
 												</button>
 
@@ -376,9 +378,9 @@
 								</div>
 							</div>
 						</div>
-						<div *ngIf="btn1!='QR Code'" class="text-center">
-							<img class="img" src="https://pngimg.com/uploads/qr_code/qr_code_PNG6.png" alt="">
-							<h2> Scan this QR Code to preview</h2>
+						<div *ngIf="btn1!='QR Code'&&!spinner" class="text-center">
+							<img class="img pb-5 pt-4" [src]="img1" alt="QR Code">
+							<h2 class="pb-2"> Scan this QR Code to preview</h2>
 							<p>You can customize the design of your
 								QR Code in the next step.</p>
 						</div>
@@ -390,7 +392,7 @@
 
 				<!-- <button mat-flat-button style="margin-top: 610px; margin-left: 110px;" class="round" color="primary" (click)="change2()">QR Code</button> -->
 				<button style="margin-top: 612px; margin-left: 160px;position: fixed;" mat-flat-button class="round"
-					color="accent" (click)="change2()">{{btn1}}</button>
+					color="accent" (click)="change2()" *ngIf="img1">{{btn1}}</button>
 
 
 			</div>

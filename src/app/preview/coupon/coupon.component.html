@@ -1,1 +1,132 @@
-<p>coupon works!</p>
+<mat-progress-bar *ngIf="!data" mode="indeterminate"></mat-progress-bar>
+<mat-spinner class="spinner" *ngIf="!data"></mat-spinner>
+<div class="container-fluid" *ngIf="data">
+
+<div class="row" >
+
+    <!-- <div class="text-center"> -->
+    <!-- <div class="content"> -->
+      
+    <div class="col-md-6 offset-md-3">
+        <div  *ngIf="!coupon">
+
+            <div class="main-content mt-4 ">
+
+                <div class="card" >
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-10 col-sm-10"><span> {{data.basic_information.company}}</span></div>
+                            <div class="col-md-2 col-sm-2">
+                                <span class="material-icons share" >
+                                    share
+                                </span></div>
+                        </div>
+                    </div>
+                    <div class="background" [ngStyle]="{background: backgroundColor}">
+                        <div>
+                            <img class="img" [style.width.px]="ImgSize" [src]="imgURL"
+                                *ngIf="imgURL">
+                        </div>
+                       <div class="row">
+                        <div class="col-md-2 offset-md-10">
+                            <span class="badge badge1 badge-primary "> {{data.basic_information.sale_badge}}</span>
+                        </div>
+                       </div>
+
+
+                        <div class="card-body">
+                            <h5>{{data.basic_information.headline}}</h5>
+                            <span [ngStyle]="{color: fontColor}">
+                                {{data.basic_information.description}}
+                            </span>
+
+
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary btn-block text-light" [ngStyle]="{background: linkColor}"
+                            (click)="couponc()">
+                            {{Coupon}}</button>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="text-center"  *ngIf=" data.coupon.terms_and_conditions!=''">
+                <div class="card">
+                    <div class="card-header">Terms & Conditions: </div>
+                    <div class="card-body">
+                <p>
+                    {{ data.coupon.terms_and_conditions}}
+                </p>
+                    </div>
+                </div>
+               </div>
+        </div>
+        <!-- </div> -->
+        <!-- </div> -->
+        <!-- <div class="font-weight-bold text-center mt-3">  QR Code Preview</div> -->
+
+        <div 
+            *ngIf="coupon">
+
+            <div class="text-light">
+
+                <div class="row ">
+                    <div class="col-md-10 c">
+                        <h4> {{data.basic_information.company}}</h4>
+                    </div>
+                    <div class="col-md-2 c">
+                        <span class="material-icons share">
+                            share
+                        </span></div>
+                </div>
+            </div>
+            <div class="row" *ngIf="coupon">
+                <div class="col-md-10 offset-md-1">
+                    <div class="card" *ngIf="coupon" style="margin-top: 40px;">
+
+                        <div class="card-body">
+                            <div class="text-center">
+                                <h4 class="mar1"> Coupon Code</h4>
+                                <h3 class="mar1">{{data.coupon.name}}</h3>
+
+                                <div class="mar">
+                                    <span class="material-icons font-weight-bold">
+                                        access_time
+                                    </span>Valid until {{ data.coupon.startDate}}
+                                </div>
+                                <button class="badge badge-pill mar"
+                                    (click)="copyMessage(data.coupon.name)" value="click to copy"><span
+                                        class="material-icons">
+                                        content_copy
+                                    </span>{{btn}}</button>
+                            </div>
+
+                            <button class="btn btn-primary btn-block mar"
+                                [ngStyle]="{background: linkColor}">
+                                <a (click)="goToLink()"> Redeem Code</a>
+                            </button>
+                            <button class="btn btn-block mar1 btn-success" (click)="couponc()" >
+                                View Description
+                            </button>
+
+                        </div>
+                    </div>
+
+                </div>
+              
+            </div>
+           
+        </div>
+    </div>
+    <!-- <div *ngIf="btn1!='QR Code'&&!spinner" class="text-center">
+        <img class="img pb-5 pt-4" [src]="img1" alt="QR Code">
+        <h2 class="pb-2"> Scan this QR Code to preview</h2>
+        <p>You can customize the design of your
+            QR Code in the next step.</p>
+    </div> -->
+</div>
+
+
+</div>

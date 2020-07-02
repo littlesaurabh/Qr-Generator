@@ -1,0 +1,50 @@
+@media screen and (max-width: 600px) {
+
+  
+  .spinner{
+    left: 40%;
+    margin-top:20%
+}
+
+}
+  .spinner{
+      left: 50%;
+      margin-top:20%
+  }
+ 
+  .container-fluid{
+    height: 100%;
+    top: 10%;
+    /* width: 200%; */
+    background-color: black;
+  }
+  .material-icons {
+    vertical-align:top;
+   
+  }
+  .badge1{
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: bold;
+
+
+    position: absolute;
+
+    height: 35px;
+   
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 2px 5px #a4a6a8;
+    -moz-box-shadow: 0 2px 5px #a4a6a8;
+    box-shadow: 0 2px 5px #a4a6a8;
+  }
+  .mar{
+    margin-top: 40px;
+  }
+  .mar1{
+    margin-top: 20px;
+  }

@@ -42,7 +42,7 @@
                   <mat-expansion-panel-header class="bg-dark text-light">
   
                     <mat-panel-title>
-                      Coupon Generation
+                      Social Media
                     </mat-panel-title>
                     <mat-panel-description>
                       <span class="material-icons mr-2">
@@ -135,7 +135,7 @@
                 <mat-expansion-panel (closed)="panelOpenState = true" (opened)="panelOpenState = false">
                   <mat-expansion-panel-header class="bg-dark">
                     <mat-panel-title class="">
-                      Coupon Generation
+                      Social Media
                     </mat-panel-title>
                     <mat-panel-description>
                       <span class="material-icons mr-2">
@@ -149,20 +149,16 @@
   
                       <div class="container">
                         <form >
-                          <label for="fname">Company:</label>
-                          <input type="text" id="fname" name="firstname" class="ftext" placeholder="Your Company's name.."
-                            [(ngModel)]="Company">
+                         
   
                           <label for="lname">Headline:</label>
                           <input type="text" id="lname" name="lastname" class="ftext" placeholder="Title"
                             [(ngModel)]="heading">
-                          <label for="subject">Description:</label>
-                          <textarea id="subject" name="subject" placeholder="Write something about coupon"
-                            style="height:80px" [(ngModel)]="desc"></textarea>
+                          <label for="subject">About us:</label>
+                          <textarea id="about" name="about" placeholder="Write something about coupon"
+                            style="height:80px" [(ngModel)]="about"></textarea>
   
-                          <label for="country">Offer: </label>
-                          <input type="text" id="offer" name="offer" class="ftext" placeholder="Type Offer Here"
-                          [(ngModel)]="offer">
+                         
                           <!-- <select id="country" name="country">
                             <option value="australia">50% off</option>
                             <option value="canada">20 % off</option>
@@ -187,12 +183,12 @@
                 <mat-expansion-panel (closed)="panelOpenState = true" (opened)="panelOpenState = false">
                   <mat-expansion-panel-header class="bg-dark">
                     <mat-panel-title class="">
-                      Coupon Generation
+                      Social Media
                     </mat-panel-title>
                     <mat-panel-description>
                       <span class="material-icons mr-2">
                         local_offer
-                      </span> Coupon Information
+                      </span>   Social Media Channels
   
                     </mat-panel-description>
                   </mat-expansion-panel-header>
@@ -201,20 +197,39 @@
   
                       <div class="container">
                         <form>
-                          <label for="cname">Coupon Name*:</label>
-                          <input type="text" id="cname" name="cname" class="ftext" placeholder="Your name.."
-                            [(ngModel)]="couponcode">
+                     
   
-                          <label for="validity">Valid until*:</label>
-                          <input type="date" id="validity" name="validity" class="ftext" placeholder="Your last name.."
-                            [(ngModel)]="validity">
-                          <label for="tnc">Terms & Conditions:</label>
-                          <textarea id="tnc" name="tnc" placeholder="Mention all T&Cs" style="height:80px"
-                            [(ngModel)]="tnc"></textarea>
-  
-                          <label for="web">Website:</label>
+                         <div class="card-body bg-dark text-light">
+                          <div class="form-group mt-2 ">
+                            <label for="web">URL:</label>
                           <textarea id="web" name="web" placeholder="Type your website here" style="height:80px"
                             [(ngModel)]="web"></textarea>
+                            <label for="web">Text</label>
+                            <input type="text" id="urltext" name="urltext" class="ftext" placeholder="Title"
+                            [(ngModel)]="urltext">
+                          </div>
+                         </div>
+                         <div class="card-body bg-dark text-light">
+                          <div class="form-group mt-2">
+                            <label for="web">Facebook:</label>
+                          <textarea id="facebook" name="facebook" placeholder="Type your facebook URL here" style="height:80px"
+                            [(ngModel)]="facebook"></textarea>
+                            <label for="facebook">Text</label>
+                            <input type="text" id="fbtext" name="fbtext" class="ftext" placeholder="Your text here"
+                            [(ngModel)]="fbtext">
+                          </div>
+                          </div>
+                          <div class="card-body bg-dark text-light">
+                          <div class="form-group mt-2">
+                            <label for="youtube">YouTube:</label>
+                          <textarea id="youtube" name="youtube" placeholder="Type your YouTube URL here" style="height:80px"
+                            [(ngModel)]="youtube"></textarea>
+                            <label for="web">Text</label>
+                            <input type="text" id="youtext" name="youtext" class="ftext" placeholder="Your text here"
+                            [(ngModel)]="youtext">
+                          </div>
+                          </div>
+                         
   
   
                           <!-- <input type="text" name="product" list="productName"/>
@@ -284,7 +299,7 @@
                   </div>
                   <div class="background" [ngStyle]="{background: backgroundColor}">
                     <div>
-                      <img class="img" [style.width.px]="ImgSize" [src]="imgURL" *ngIf="imgURL">
+                      <img class="img" [style.width.px]="ImgSize" src="imgURL" >
                     </div>
                     <div class="text-center">
                       <span class="badge badge1 badge-primary "> {{offer}}</span>
@@ -361,8 +376,8 @@
               </div>
             </div>
           </div>
-          <div  *ngIf="btn1!='QR Code'" class="text-center"> 
-            <img class="img" src="https://pngimg.com/uploads/qr_code/qr_code_PNG6.png" alt="">
+          <div  *ngIf="btn1!='QR Code'" class="text-center" > 
+            <img class="img" src="imgURL1" alt="" >
          <h2>   Scan this QR Code to preview</h2>
   <p>You can customize the design of your
     QR Code in the next step.</p>

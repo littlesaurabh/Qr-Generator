@@ -30,6 +30,9 @@ export class CouponsComponent implements OnInit {
   cname:any=""
   btn1:any="QR Code";
   image;
+  img1:any="";
+  data:any;
+  spinner=false
   ngOnInit() {
     this.backgroundColor = '#fff';
     this.fontColor = '#222';
@@ -43,6 +46,7 @@ export class CouponsComponent implements OnInit {
    * @param {string} color
    */
   change2(){
+    console.log(this.img1)
     if(this.btn1=="QR Code")
     this.btn1="Preview"
     else
@@ -130,6 +134,8 @@ export class CouponsComponent implements OnInit {
   }
 
   navigate() {
+    this.spinner=true
+    this.img1=""
     const data = {
       'user': '5ef247c92eafbd1ed045c9d7',
       'coupon_name': this.cname,
@@ -153,8 +159,12 @@ export class CouponsComponent implements OnInit {
 
     this.couponService.saveCoupon(formData).subscribe(data => {
       console.log(data)
+      this.data=data
+      this.img1=this.data.response.data
+      this.spinner=false
     }, err => {
       console.log(err)
+      this.spinner=false
     })
     
   }

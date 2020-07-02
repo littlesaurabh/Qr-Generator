@@ -16,12 +16,17 @@ export class SocialMediaComponent implements OnInit {
   public linkColor: string;
   coupon: boolean = false;
   couponcode: any="SALE25OFF";
-  heading: any = "Storewide Holiday Sale"
+  heading: any = "Connect with us on social media"
   public imagePath;
   offer: any = "25%"
   ImgSize: any = 240;
-  desc: any = "Get all of your holiday shopping done early this year! Discounted items on all designer clothing, bags, and more."
-  Company: any = "Elle Boutique"
+  urltext:any="Visit us online"
+  youtube:any="www.youtube.com/id"
+  youtext:any="Watch our videos"
+  facebook:any="www.facebook.com/id"
+  fbtext:any="Become a fan"
+  about: any = "Follow us and get updates delivered to your favorite social media channel."
+  // headline: any = "Connect with us on social media"
   imgURL: any = "https://s3.eu-central-1.amazonaws.com/qrcgappcdn/coupon-solution/header.jpg";
   btn:any="Copy Code";
   validity:any="28 Jul 2020"

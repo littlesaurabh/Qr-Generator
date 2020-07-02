@@ -21,12 +21,8 @@ margin-left: 130px;
   font-style: normal;
   font-weight: bold;
 
-  margin: 0;
-  padding: 12px 22px;
   position: absolute;
-  right: 55px;
-  top: 193px;
-  height: 35px;
+ 
   max-width: calc(100% - 40px);
   white-space: nowrap;
   overflow: hidden;
@@ -221,7 +217,10 @@ mat-panel-title,mat-panel-description{
 .btn2:hover{
  -webkit-transform: scale(1.1);
 }
-
+.spinner{
+  left: 30%;
+  top:35%;
+}
 /* Add a background color and some padding around the form */
 /* .container {
   border-radius: 5px;
