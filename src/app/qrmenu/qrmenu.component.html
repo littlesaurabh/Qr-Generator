@@ -1,17 +1,19 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-8 ">
+    <div class="row pt-4">
+        <div class="col-md-9  ">
             <div class="card">
                 <div class="" style="height: 50px;">  
-                    <button class="btn fa fa-arrow-left ml-0" style="font-size:30px;color:black ;"></button> 
+                    <a class="btn ml-0" [routerLink]="[ '/dashboard']"><span class="material-icons" style="font-size:45px;color:black ;">
+                        keyboard_backspace
+                        </span></a> 
                     <!-- <i ></i>     -->
                     <!-- <span class="text-center" style="text-align: center;">QR Generator</span> -->
                 </div>
                 <div class="card-body">
                     <div class="form-group has-feedback">
                         <div class="row">
-                          <div class="col-md-4">
-                           <span class="font-weight-bold ml-5" style="font-size: 20px;">Select your QR Code type</span>
+                          <div class="col-md-5">
+                           <span class="font-weight-bold title" >Select your QR Code type</span>
                           
                           </div>
                           <div class="col-md-6">

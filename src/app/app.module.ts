@@ -70,6 +70,8 @@ import { ColorPickerComponent } from './color-picker/color-picker.component';
 import { CouponComponent } from './preview/coupon/coupon.component';
 import { Mp3PComponent } from './preview/mp3-p/mp3-p.component';
 import { PdfvComponent } from './preview/pdfv/pdfv.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+// import { WebComponent } from './preview/web/web.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -97,7 +99,8 @@ import { PdfvComponent } from './preview/pdfv/pdfv.component';
     ColorPickerComponent,
     CouponComponent,
     Mp3PComponent,
-    PdfvComponent
+    PdfvComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -140,6 +143,7 @@ import { PdfvComponent } from './preview/pdfv/pdfv.component';
     MatPaginatorModule,
     FormsModule, 
     ReactiveFormsModule,
+    PdfViewerModule,
     ToastrModule.forRoot() // ToastrModule added
   ],
   providers: [],

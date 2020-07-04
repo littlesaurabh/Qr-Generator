@@ -19,7 +19,7 @@ export class SocialMediaComponent implements OnInit {
   heading: any = "Connect with us on social media"
   public imagePath;
   offer: any = "25%"
-  ImgSize: any = 240;
+  ImgSize: any = 360;
   urltext:any="Visit us online"
   youtube:any="www.youtube.com/id"
   youtext:any="Watch our videos"
@@ -27,7 +27,7 @@ export class SocialMediaComponent implements OnInit {
   fbtext:any="Become a fan"
   about: any = "Follow us and get updates delivered to your favorite social media channel."
   // headline: any = "Connect with us on social media"
-  imgURL: any = "https://s3.eu-central-1.amazonaws.com/qrcgappcdn/coupon-solution/header.jpg";
+  imgURL: any = "https://media.sproutsocial.com/uploads/2017/11/Social-Media-Ideas.png";
   btn:any="Copy Code";
   validity:any="28 Jul 2020"
   public message: string;

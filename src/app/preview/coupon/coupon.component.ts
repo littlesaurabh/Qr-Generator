@@ -18,7 +18,7 @@ export class CouponComponent implements OnInit {
   coupon:any=false;
   Coupon:any="Coupon"
   btn:any="Copy Code"
-  backgroundColor:any
+  backgroundColor:any="black"
   fontColor:any
   linkColor:any
   image:any="https://whispering-thicket-97767.herokuapp.com/";

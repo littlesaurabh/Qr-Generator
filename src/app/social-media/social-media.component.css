@@ -3,10 +3,13 @@ margin-left: 130px;
 /* margin-top: 1px; */
 /* }  */
 .mat-divider{
-    margin-bottom: 20px;
+    margin-bottom: 26px;
   }
   
-  
+  mat-list-item{
+    /* font-weight: bold; */
+    color: white;
+  }
   .c{
     font-weight: bold;
     top: 20px;
@@ -40,9 +43,27 @@ margin-left: 130px;
   label{
    font-family:monospace;
   }
-  .material-icons {
+  .material-icons{
     vertical-align:top;
   }
+  .fa {
+font-size: 40px;
+padding-right: 10px;
+/* vertical-align:top; */
+vertical-align: middle;
+  }
+.jumbotron{
+    padding-top: 10px; 
+    padding-bottom: 0px;
+    margin-bottom: 0;
+    background-color: rgb(34, 31, 226);
+    color: rgb(255, 255, 255);
+    text-align: center;
+  }
+  .j {
+    color: white;
+  }
+
   .mar{
     margin-top: 40px;
   }

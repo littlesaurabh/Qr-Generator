@@ -117,7 +117,7 @@
   
                       <div> Size </div>
                       <div style="color:red;" *ngIf="message">{{message}}</div>
-                      <mat-slider min="50" max="260" step="20.5" value={{ImgSize}} thumbLabel [displayWith]="formatLabel"
+                      <mat-slider min="50" max="360" step="20.5" value={{ImgSize}} thumbLabel [displayWith]="formatLabel"
                         tickInterval="1000" (change)="updateSetting($event)"></mat-slider>
                       <input #file type="file" accept='image/*' (change)="preview(file.files)" class="btn">
                     </div>
@@ -188,7 +188,7 @@
                     <mat-panel-description>
                       <span class="material-icons mr-2">
                         local_offer
-                      </span>   Social Media Channels
+                      </span>   Social Media Channelsheading
   
                     </mat-panel-description>
                   </mat-expansion-panel-header>
@@ -201,7 +201,7 @@
   
                          <div class="card-body bg-dark text-light">
                           <div class="form-group mt-2 ">
-                            <label for="web">URL:</label>
+                            <label for="web"><i class="fa fa-chrome" aria-hidden="true"></i>Website URL:</label>
                           <textarea id="web" name="web" placeholder="Type your website here" style="height:80px"
                             [(ngModel)]="web"></textarea>
                             <label for="web">Text</label>
@@ -211,7 +211,7 @@
                          </div>
                          <div class="card-body bg-dark text-light">
                           <div class="form-group mt-2">
-                            <label for="web">Facebook:</label>
+                            <label for="facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i>Facebook:</label>
                           <textarea id="facebook" name="facebook" placeholder="Type your facebook URL here" style="height:80px"
                             [(ngModel)]="facebook"></textarea>
                             <label for="facebook">Text</label>
@@ -221,7 +221,7 @@
                           </div>
                           <div class="card-body bg-dark text-light">
                           <div class="form-group mt-2">
-                            <label for="youtube">YouTube:</label>
+                            <label for="youtube"><i class="fa fa-youtube-square" aria-hidden="true"></i>YouTube:</label>
                           <textarea id="youtube" name="youtube" placeholder="Type your YouTube URL here" style="height:80px"
                             [(ngModel)]="youtube"></textarea>
                             <label for="web">Text</label>
@@ -279,6 +279,24 @@
          </div> -->
          
           <div class="smartphone" style="background-color: rgb(68, 127, 182);position:fixed;" >
+            <!-- <img src="" alt=""> -->
+            <!-- class="img" [style.width.px]="ImgSize" [src]="imgURL"
+													*ngIf="imgURL" -->
+            <img [style.width.px]="ImgSize"  [src]="imgURL"  class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+         <div class="jumbotron h-25" [ngStyle]="{background: backgroundColor}">
+     <h6 [ngStyle]="{color: fontColor}" class="font-weight-bold mt-2"> {{heading}}</h6>
+    
+     <mat-card-subtitle class="j" [ngStyle]="{color: fontColor}">{{about}}</mat-card-subtitle>
+        
+         </div>
+         <mat-list [ngStyle]="{background: linkColor}" >
+          <mat-list-item ><i class="fa fa-chrome mr-2" aria-hidden="true"></i>{{web}}<br>{{urltext}}</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item><i class="fa fa-facebook-square mr-2" aria-hidden="true"></i>{{facebook}} <br>{{fbtext}}</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item><i class="fa fa-youtube-square mr-2" aria-hidden="true"></i>{{youtube}}<br>{{youtext}}</mat-list-item>
+          <!-- <mat-divider></mat-divider> -->
+        </mat-list>
           </div>
             
        

@@ -12,28 +12,39 @@ export class VcardComponent implements OnInit {
   
 
   public backgroundColor: string;
-  public fontColor: string;
+  public fontColor: string="white";
   public linkColor: string;
   coupon: boolean = false;
   couponcode: any="SALE25OFF";
-  heading: any = "Storewide Holiday Sale"
+  heading: any = ""
   public imagePath;
   offer: any = "25%"
-  ImgSize: any = 240;
-  desc: any = "Get all of your holiday shopping done early this year! Discounted items on all designer clothing, bags, and more."
-  Company: any = "Elle Boutique"
-  imgURL: any = "https://s3.eu-central-1.amazonaws.com/qrcgappcdn/coupon-solution/header.jpg";
+  ImgSize: any ;
+  desc: any = ""
+  Company: any = ""
+  imgURL: any = "https://upload.wikimedia.org/wikipedia/commons/6/67/Vector_Face_wearing_Spectacles.png";
   btn:any="Copy Code";
   validity:any="28 Jul 2020"
   public message: string;
   tnc:any=""
-  web:any="https://www.amazon.com/"
+  web:any=""
+  mobile:any=""
+  fax:""
+  var:boolean=false;
+  var2:boolean=true;
+  var3:boolean=true;
+  address
+  phone
+  job
+  email
+  fname
+  lname
   cname:any=""
   btn1:any="QR Code";
   ngOnInit() {
-    this.backgroundColor = '#fff';
-    this.fontColor = '#222';
-    this.linkColor = '#4b4fce';
+    this.backgroundColor = 'grey';
+    this.fontColor = 'white';
+    this.linkColor = 'white';
     // this.validity=moment().format('DD-MMM-YYYY');
   }
 
@@ -42,6 +53,10 @@ export class VcardComponent implements OnInit {
    * @param {string} type
    * @param {string} color
    */
+  open(n){
+   if(n==1)
+   this.var=true
+  }
   change2(){
     if(this.btn1=="QR Code")
     this.btn1="Preview"

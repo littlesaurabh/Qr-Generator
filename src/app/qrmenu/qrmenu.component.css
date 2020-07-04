@@ -8,7 +8,10 @@
     -webkit-transform: scale(1.1);
     border:  1px solid black;
   }
-  
+  .container-fluid{
+    height: 100%;
+    background-color: lightblue;
+  }
   .btn1{
       /* width: 20px; */
   }
@@ -76,8 +79,14 @@
   font-size: 20px;
   font-weight: bold;
  }
+
  .btn2:hover{
   -webkit-transform: scale(1.1);
+ }
+ .title{
+  padding-left: 62px;
+  font-size: 20px; 
+  font-family: monospace;
  }
  @media screen and (max-width: 600px) {
   .mobile1 {
@@ -88,6 +97,14 @@
     width: 28%; */
     display: none;
   }
+  .container-fluid{
+    height: 300%;
+  }
   
+  .title{
+    padding-left: 0px;
+    font-size: 15px;
+    text-align: center;
+   }
  
 }

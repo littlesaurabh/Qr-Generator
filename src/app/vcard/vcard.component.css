@@ -40,6 +40,18 @@ margin-left: 130px;
   label{
    font-family:monospace;
   }
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height:70px ;
+    background-color: #424242;
+    /* color: white; */
+    text-align: center;
+    font-size: larger;
+  
+  }
   .material-icons {
     vertical-align:top;
   }
@@ -54,8 +66,12 @@ margin-left: 130px;
   font-weight: bolder;
   }
   .img{
-    width: 260px;
-    height: auto;
+    /* width: 260px; */
+    /* height: auto; */
+  border-radius: 50%;
+  border: 2px solid black;
+  height: 100px;
+    width: 100px;
   
   }
   .mat-form-field + .mat-form-field {
@@ -74,7 +90,7 @@ margin-left: 130px;
   .body{
       font-family: "Maison Neue",sans-serif;
       /* background-color: #5A6870; */
-      background-color: lightgrey;
+      background-color: lightblue;
       /* color: #424242; */
       height: 250%;
   }
@@ -118,6 +134,7 @@ margin-left: 130px;
   /* The device with borders */
   .smartphone {
     position: relative;
+    overflow: scroll;
     width: 360px;
     height: 640px;
     margin: auto;

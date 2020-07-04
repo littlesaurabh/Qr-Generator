@@ -1,0 +1,301 @@
+/* .share{
+margin-left: 130px;
+/* margin-top: 1px; */
+/* }  */
+.mat-divider{
+    margin-bottom: 20px;
+  }
+  
+  
+  .c{
+    font-weight: bold;
+    top: 20px;
+  }
+  
+  
+  
+  
+  .badge1{
+  
+    font-size: 16px;
+    font-style: normal;
+    font-weight: bold;
+  
+    margin: 0;
+    padding: 12px 22px;
+    position: absolute;
+    right: 55px;
+    top: 193px;
+    height: 35px;
+    max-width: calc(100% - 40px);
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 2px 5px #a4a6a8;
+    -moz-box-shadow: 0 2px 5px #a4a6a8;
+    box-shadow: 0 2px 5px #a4a6a8;
+  }
+  label{
+   font-family:monospace;
+  }
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height:70px ;
+    background-color: #424242;
+    /* color: white; */
+    text-align: center;
+    font-size: larger;
+  
+  }
+  .material-icons {
+    vertical-align:top;
+  }
+  .mar{
+    margin-top: 40px;
+  }
+  .mar1{
+    margin-top: 20px;
+  }
+  h3{
+  color: rgb(233, 30, 99);
+  font-weight: bolder;
+  }
+  .img{
+    /* width: 260px; */
+    /* height: auto; */
+  border-radius: 50%;
+  border: 2px solid black;
+  height: 100px;
+    width: 100px;
+  
+  }
+  .mat-form-field + .mat-form-field {
+      margin-left: 8px;
+    }
+    .example-form {
+      min-width: 150px;
+      max-width: 500px;
+      width: 100%;
+    }
+    
+    .example-full-width {
+      width: 100%;
+    }
+  
+  .body{
+      font-family: "Maison Neue",sans-serif;
+      /* background-color: #5A6870; */
+      background-color: lightblue;
+      /* color: #424242; */
+      height: 250%;
+  }
+  .drop{
+      margin-top: 20px;
+  }
+  mat-panel-title,mat-panel-description{
+    color: white;
+  }
+  
+  .app {
+    background: #f1f1f1;
+    /* height: 100vh; */
+    /* padding-top: 100px; */
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .main-content {
+    display: flex;
+    
+    }
+    .sidebar {
+      width: 30%;
+    
+        margin-bottom: 20px;
+      }
+    .content {
+      width: 40%;
+  
+    
+    }
+    .background {
+      border-radius: 4px;
+      padding: 20px;
+    }
+  
+  /* The device with borders */
+  .smartphone {
+    position: relative;
+    width: 360px;
+    overflow: scroll;
+    height: 640px;
+    margin: auto;
+    border: 16px black solid;
+    border-top-width: 60px;
+    border-bottom-width: 60px;
+    border-radius: 36px;
+  }
+  
+  /* The horizontal line on the top of the device */
+  .smartphone:before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 5px;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333;
+    border-radius: 10px;
+  }
+  
+  /* The circle on the bottom of the device */
+  .smartphone:after {
+    content: '';
+    display: block;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: 50%;
+    bottom: -65px;
+    transform: translate(-50%, -50%);
+    background: #333;
+    /* content: "CLik"; */
+    border-radius: 50%;
+  }
+  
+  /* The screen (or content) of the device */
+  .smartphone .content {
+    width: 360px;
+    height: 640px;
+    background: white;
+  }
+  
+  .container {
+   
+    margin: 0 auto;
+  }
+  
+  .main-content {
+    display: flex;
+   
+    }
+   
+  
+  /* Style inputs with type="text", select elements and textareas */
+  .ftext, select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  .round{
+    border-radius: 20px;
+    background-color:blue;
+  }
+  @media screen and (max-width: 600px) {
+    .mobile {
+      visibility: hidden;
+      clear: both;
+      float: left;
+      margin: 10px auto 5px 20px;
+      width: 28%;
+      display: none;
+    }
+    .body{
+      height: 100%;
+    }
+   
+  }
+  .btn1:hover {
+    -webkit-transform: scale(1.1);
+    border:  1px solid black;
+  }
+  .btn1{
+      /* width: 20px; */
+  }
+  .btn2{
+    margin-bottom: 0px;
+   background-color: #90c52d;
+   width: 25%;
+   font-size: 20px;
+   font-weight: bold;
+  }
+  .btn2:hover{
+   -webkit-transform: scale(1.1);
+  }
+  
+  /* Add a background color and some padding around the form */
+  /* .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  } */
+  
+  /* @import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
+  
+  
+  .box-3 { background-color:rgb(68, 127, 182) }
+  
+  .btn3 {
+      line-height: 50px;
+      height: 50px;
+      text-align: center;
+      width: 250px;
+      cursor: pointer;
+      
+  }
+  
+  
+  
+  .btn-three {
+      color: #FFF;
+      transition: all 0.5s;
+      position: relative;
+  }
+  .btn-three::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background-color: rgba(255,255,255,0.1);
+      transition: all 0.3s;
+  }
+  .btn-three:hover::before {
+      opacity: 0 ;
+      transform: scale(0.5,0.5);
+  }
+  .btn-three::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0;
+      transition: all 0.3s;
+      border: 1px solid rgba(255,255,255,0.5);
+      transform: scale(1.2,1.2);
+  }
+  .btn-three:hover::after {
+      opacity: 1;
+      transform: scale(1,1);
+  } */

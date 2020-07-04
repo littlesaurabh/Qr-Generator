@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class PdfComponent implements OnInit {
 
   constructor() { }
-
+  pdfSrc:any="https://www.inf.ed.ac.uk/teaching/courses/nlu/assets/reading/Gurney_et_al.pdf"
   public backgroundColor: string;
   public fontColor: string;
   public linkColor: string;

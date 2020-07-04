@@ -67,176 +67,11 @@
 
 						</mat-accordion>
 					</div>
-					<div class="mt-2">
-
-						<mat-accordion>
-							<mat-expansion-panel (closed)="panelOpenState = false" (opened)="panelOpenState = true">
-								<mat-expansion-panel-header class="bg-dark text-light">
-
-									<mat-panel-title>
-										PDF QR Generation
-									</mat-panel-title>
-									<mat-panel-description>
-										<span class="material-icons mr-2">
-											design_services
-										</span>
-										Design & Customization
-									</mat-panel-description>
-								</mat-expansion-panel-header>
-								<div class="card">
-									<div class="text-center font-weight-bold"><i class="material-icons">
-											colorize
-										</i> Choose Colors</div>
-									<div class="card-body">
-
-
-
-
-
-										<input type="color" name="" id="" class="form-control"
-											[(ngModel)]="backgroundColor">
-										<app-color-picker [color]="backgroundColor" [heading]="'Background'"
-											(event)="setColor('background', $event)"></app-color-picker>
-
-
-
-
-
-
-										<div class="picker">
-											<input type="color" name="" id="" class="form-control"
-												[(ngModel)]="fontColor">
-											<app-color-picker [color]="fontColor" [heading]="'Font'"
-												(event)="setColor('font', $event)">
-											</app-color-picker>
-										</div>
-
-										<div class="picker">
-											<input type="color" name="" id="" class="form-control"
-												[(ngModel)]="linkColor">
-											<app-color-picker [color]="linkColor" [heading]="'Links'"
-												(event)="setColor('link', $event)">
-											</app-color-picker>
-										</div>
-
-
-										<div class="color-picker">
-											<div class="summary-info" (click)="toggleColors()">
-												<div class="info">
-													<p class="style">{{ heading }}</p>
-													<p class="style-value">{{ color }}</p>
-												</div>
-
-												<div class="circle" [ngStyle]="{'background': color}"></div>
-											</div>
-
-											<div *ngIf="show" class="opened">
-												<div class="colors">
-													<div (click)="changeColor(paint)"
-														*ngFor="let paint of defaultColors" class="circle"
-														[ngStyle]="{'background': paint}"></div>
-												</div>
-
-												<div class="hex-code">
-													<p>Hex Code</p>
-													<div class="g-input">
-														<input type="text" maxlength="7" [value]="color"
-															(keyup)="changeColorManual(paintInput.value)"
-															(keydown.enter)="toggleColors()" #paintInput />
-													</div>
-												</div>
-											</div>
-										</div>
-										<mat-divider></mat-divider>
-
-										<div class="ml-3 font-weight-bold text-center"><span class="material-icons">
-												image
-											</span> Image </div>
-
-										<div> Size </div>
-										<div style="color:red;" *ngIf="message">{{message}}</div>
-										<mat-slider min="50" max="260" step="20.5" value={{ImgSize}} thumbLabel
-											[displayWith]="formatLabel" tickInterval="1000"
-											(change)="updateSetting($event)"></mat-slider>
-										<input #file type="file" name="image" accept='image/*' (change)="changeFile($event)" (change)="preview(file.files)"
-											class="btn">
-									</div>
-
-
-								</div>
-							</mat-expansion-panel>
-
-						</mat-accordion>
-					</div>
+					
 
 
 				
-					<div class="mt-2">
-						<mat-accordion>
-							<mat-expansion-panel (closed)="panelOpenState = true" (opened)="panelOpenState = false">
-								<mat-expansion-panel-header class="bg-dark">
-									<mat-panel-title class="">
-										PDF QR Generation
-									</mat-panel-title>
-									<mat-panel-description>
-										<span class="material-icons mr-2">
-											picture_as_pdf
-										</span>PDF Information
-
-									</mat-panel-description>
-								</mat-expansion-panel-header>
-								<div class="card">
-									<div class="card-body">
-
-										<div class="container">
-											<form>
-												<label for="company">Company</label>
-												<input type="text" id="company" name="company" class="ftext"
-													placeholder="Your Company" [(ngModel)]="company">
-
-												<label for="title">Title:</label>
-												<input type="text" id="title" name="title" class="ftext"
-													placeholder="Your Title" [(ngModel)]="title">
-
-												<label for="validity">Information:</label>
-												<input type="text" id="info" name="info" class="ftext"
-													placeholder="Your last name.." [(ngModel)]="info">
-												<!-- <label for="tnc">Terms & Conditions:</label>
-												<textarea id="tnc" name="tnc" placeholder="Mention all T&Cs"
-													style="height:80px" [(ngModel)]="tnc"></textarea> -->
-
-												<label for="web">Website:</label>
-												<textarea id="web" name="web" placeholder="Type your website here"
-													style="height:80px" [(ngModel)]="web"></textarea>
-
-
-												<!-- <label for="btn">Website:</label>
-												<textarea id="btn" name="btn" placeholder="Type your button name"
-													style="height:80px" [(ngModel)]="btn"></textarea> -->
-
-													
-
-
-												<!-- <input type="text" name="product" list="productName"/>
-<datalist id="productName">
-    <option value="Pen">Pen</option>
-    <option value="Pencil">Pencil</option>
-    <option value="Paper">Paper</option>
-</datalist> -->
-
-												<!-- <input type="submit" value="Submit"> -->
-											</form>
-										</div>
-									</div>
-								</div>
-							</mat-expansion-panel>
-							<!-- <mat-action-row>
-                        <button mat-button>Click me</button>
-                      </mat-action-row> -->
-
-						</mat-accordion>
-					</div>
-
+				
 				</div>
 				<div class="footer text-center">
 					<button class="btn btn2 mt-5 mb-2" (click)="navigate()">Next</button>
@@ -288,6 +123,7 @@
 											<div>
 												<img class="img" [style.width.px]="ImgSize" [src]="imgURL"
 													*ngIf="imgURL">
+													<!-- <pdf-viewer [src]="pdfSrc" [render-text]="true" style="display: block;"></pdf-viewer>  -->
 											</div>
 										
 
