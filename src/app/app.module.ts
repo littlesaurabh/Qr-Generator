@@ -71,6 +71,21 @@ import { CouponComponent } from './preview/coupon/coupon.component';
 import { Mp3PComponent } from './preview/mp3-p/mp3-p.component';
 import { PdfvComponent } from './preview/pdfv/pdfv.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { EventComponent } from './event/event.component';
+import { SocialmediapComponent } from './preview/socialmediap/socialmediap.component';
+import { WebsitepComponent } from './preview/websitep/websitep.component';
+import { BusinesspComponent } from './preview/businessp/businessp.component';
+import { CreateAppComponent } from './preview/create-app/create-app.component';
+import { VideopComponent } from './preview/videop/videop.component';
+import { VcardpComponent } from './preview/vcardp/vcardp.component';
+// import { CouponpComponent } from './preview/couponp/couponp.component';
+import { RatingpComponent } from './preview/ratingp/ratingp.component';
+import { FacebookpComponent } from './preview/facebookp/facebookp.component';
+import { ImagepComponent } from './preview/imagep/imagep.component';
+import { FeedbackpComponent } from './preview/feedbackp/feedbackp.component';
+import { EventpComponent } from './preview/eventp/eventp.component';
 // import { WebComponent } from './preview/web/web.component';
 @NgModule({
   declarations: [
@@ -100,6 +115,18 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     CouponComponent,
     Mp3PComponent,
     PdfvComponent,
+    EventComponent,
+    SocialmediapComponent,
+    WebsitepComponent,
+    BusinesspComponent,
+    CreateAppComponent,
+    VideopComponent,
+    VcardpComponent,
+    RatingpComponent,
+    FacebookpComponent,
+    ImagepComponent,
+    FeedbackpComponent,
+    EventpComponent,
   
   ],
   imports: [
@@ -144,6 +171,9 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     FormsModule, 
     ReactiveFormsModule,
     PdfViewerModule,
+    NgbPaginationModule,
+     NgbAlertModule,
+     NgbModule,
     ToastrModule.forRoot() // ToastrModule added
   ],
   providers: [],

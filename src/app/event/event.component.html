@@ -1,0 +1,368 @@
+<div class="body">
+
+
+
+
+    <div class="container-fluid">
+  
+  
+      <div class="row">
+  
+        <div class="col-md-6 offset-md-1">
+          <div>
+  
+            <div style="margin-top: 10%;">
+              <!-- <input type="text"> -->
+  
+              <!-- <mat-form-field>
+                <input matInput placeholder="label" value="value">
+              </mat-form-field> -->
+              <!-- <div class="text-center"> -->
+  
+              <!-- </div> -->
+  
+            </div>
+            <div class="text-center">
+              <mat-form-field class="example-form-field" style="width: 400px;">
+  
+                <mat-label><span class="material-icons">
+                    qr_code
+                  </span> Coupon Name</mat-label>
+                <input matInput type="text" [(ngModel)]="cname">
+                <button mat-button *ngIf="cname" matSuffix mat-icon-button aria-label="Clear" (click)="cname=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+  
+            <div class="mt-2">
+  
+              <mat-accordion>
+                <mat-expansion-panel (closed)="panelOpenState = false" (opened)="panelOpenState = true" [expanded]="true"
+                  (click)="open(1,true)">
+                  <mat-expansion-panel-header class="bg-dark text-light">
+  
+                    <mat-panel-title>
+                      Coupon Generation
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      <span class="material-icons mr-2">
+                        design_services
+                      </span>
+                      Design & Customization
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+                  <div class="card">
+                    <div class="text-center font-weight-bold"><i class="material-icons">
+                        colorize
+                      </i> Choose Colors</div>
+                    <div class="card-body">
+  
+  
+  
+  
+  
+                      <input type="color" name="" id="" class="form-control" [(ngModel)]="backgroundColor">
+                      <app-color-picker [color]="backgroundColor" [heading]="'Background'"
+                        (event)="setColor('background', $event)"></app-color-picker>
+  
+  
+  
+  
+  
+  
+                      <div class="picker">
+                        <input type="color" name="" id="" class="form-control" [(ngModel)]="fontColor">
+                        <app-color-picker [color]="fontColor" [heading]="'Font'" (event)="setColor('font', $event)">
+                        </app-color-picker>
+                      </div>
+  
+                      <div class="picker">
+                        <input type="color" name="" id="" class="form-control" [(ngModel)]="linkColor">
+                        <app-color-picker [color]="linkColor" [heading]="'Links'" (event)="setColor('link', $event)">
+                        </app-color-picker>
+                      </div>
+  
+  
+                      <div class="color-picker">
+                        <div class="summary-info" (click)="toggleColors()">
+                          <div class="info">
+                            <p class="style">{{ heading }}</p>
+                            <p class="style-value">{{ color }}</p>
+                          </div>
+  
+                          <div class="circle" [ngStyle]="{'background': color}"></div>
+                        </div>
+  
+                        <div *ngIf="show" class="opened">
+                          <div class="colors">
+                            <div (click)="changeColor(paint)" *ngFor="let paint of defaultColors" class="circle"
+                              [ngStyle]="{'background': paint}"></div>
+                          </div>
+  
+                          <div class="hex-code">
+                            <p>Hex Code</p>
+                            <div class="g-input">
+                              <input type="text" maxlength="7" [value]="color"
+                                (keyup)="changeColorManual(paintInput.value)" (keydown.enter)="toggleColors()"
+                                #paintInput />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <mat-divider></mat-divider>
+  
+                      <div class="ml-3 font-weight-bold text-center"><span class="material-icons">
+                          image
+                        </span> Image </div>
+  
+                      <div> Size </div>
+                      <div style="color:red;" *ngIf="message">{{message}}</div>
+                      <mat-slider min="50" max="260" step="20.5" value={{ImgSize}} thumbLabel [displayWith]="formatLabel"
+                        tickInterval="1000" (change)="updateSetting($event)"></mat-slider>
+                      <input #file type="file" accept='image/*' (change)="preview(file.files)" class="btn">
+                    </div>
+  
+  
+                  </div>
+                </mat-expansion-panel>
+  
+              </mat-accordion>
+            </div>
+  
+  
+            <div class="mt-2">
+              <mat-accordion>
+                <mat-expansion-panel (closed)="panelOpenState = true" (opened)="panelOpenState = false" [expanded]="true">
+                  <mat-expansion-panel-header class="bg-dark">
+                    <mat-panel-title class="">
+                      Coupon Generation
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      <span class="material-icons mr-2">
+                        perm_device_information
+                      </span> Basic Information
+  
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+                  <div class="card">
+                    <div class="card-body">
+  
+                      <div class="container">
+                        <form>
+                          <label for="fname">Name:</label>
+                          <input type="text" id="fname" name="fname" class="ftext" placeholder="Your First name.."
+                            [(ngModel)]="fname">{{fname}}
+  
+                          <input type="text" id="lname" name="lname" class="ftext" placeholder="Your Last name.."
+                            [(ngModel)]="lname">
+  
+                          <label for="mobile">Numbers:</label>
+                          <input type="text" id="mobile" name="mobile" class="ftext" placeholder="Your Mobile Number"
+                            [(ngModel)]="mobile">
+                          <input type="text" id="phone" name="phone" class="ftext" placeholder="Your Phone Number.."
+                            [(ngModel)]="phone">
+                          <input type="text" id="fax" name="fax" class="ftext" placeholder="Your Fax Number.."
+                            [(ngModel)]="fax">
+  
+                          <label for="email">Email:</label>
+                          <input type="text" id="email" name="email" class="ftext" placeholder="Your Email Address"
+                            [(ngModel)]="email">
+                          <label for="Company">Company:</label>
+                          <input type="text" id="Company" name="Company" class="ftext" placeholder="Your Company's name.."
+                            [(ngModel)]="Company">
+                          <label for="job">Job:</label>
+                          <input type="text" id="job" name="job" class="ftext" placeholder="Your Job Title"
+                            [(ngModel)]="job">
+                          <label for="address">Address:</label>
+                          <input type="text" id="address" name="address" class="ftext" placeholder="Your Job Title"
+                            [(ngModel)]="address">
+  
+                          <label for="web">Website:</label>
+                          <input type="text" id="web" name="web" class="ftext" placeholder="Your Website"
+                            [(ngModel)]="web">
+                          <label for="desc">Description:</label>
+                          <textarea id="desc" name="desc" placeholder="Write something about card." style="height:80px"
+                            [(ngModel)]="desc"></textarea>
+  
+  
+  
+  
+  
+  
+                       
+                        
+  
+                          <!-- <label for="offer">Offer: </label>
+                            <input type="text" id="offer" name="offer" class="ftext" placeholder="Type Offer Here"
+                            [(ngModel)]="offer"> -->
+                          <!-- <select id="country" name="country">
+                              <option value="australia">50% off</option>
+                              <option value="canada">20 % off</option>
+                              <option value="usa">2 for 1</option>
+                            </select> -->
+  
+  
+                          <!-- <input type="submit" value="Submit"> -->
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </mat-expansion-panel>
+                <!-- <mat-action-row>
+                            <button mat-button>Click me</button>
+                          </mat-action-row> -->
+  
+              </mat-accordion>
+            </div>
+            
+  
+          </div>
+  
+        </div>
+  
+        <div class="col-md- 2 offset-md-1 mobile">
+          <!-- <mobile></mobile> -->
+  
+  
+          <!-- <button class="badge badge-pill badge-primary"></button>
+              <button class="badge badge-pill badge-primary">QR Code</button>
+            </span> -->
+  
+  
+          <div class="card-body" style="position:fixed; ">
+            <!-- <div class="form-inline">
+            <div class="box-3 ">
+              <div class="btn3 btn-three">
+                <span (click)="change2()" >{{btn1}}</span>
+                
+              </div>
+            </div>
+          
+           </div> -->
+  
+            <div class="smartphone" style="position:fixed;">
+  
+              <div class="card h-50 bg-dark" [ngStyle]="{background: backgroundColor}">
+                <!-- <img src="data:image/png;base64,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" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt=""> -->
+  
+                <div class="text-center" style="padding-top: 30px;">
+                  <img class="img " [style.width.px]="ImgSize" [src]="imgURL" *ngIf="imgURL">
+                  <h6 class="pt-2"  [ngStyle]="{color: fontColor}">{{fname}} &nbsp;{{lname}}</h6>
+                  <mat-card-subtitle class="j" [ngStyle]="{color: fontColor}">{{job}}</mat-card-subtitle>
+                </div>
+              </div>
+              <mat-list [ngStyle]="{background: linkColor}">
+                <mat-divider></mat-divider>
+                <mat-list-item><span class="material-icons mr-2">
+                  contact_phone
+                  </span><span class="font-weight-bold mr-2">
+                    <div class="row">
+                      <div class="col-md-4">Mobile:</div>
+                    </div>
+                  </span>
+                  <div class="col-md-8">{{mobile}} </div>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+  
+                <mat-list-item><span class="material-icons mr-2">
+                  call
+                  </span> <span
+                    class="font-weight-bold mr-2">
+                    <div class="row">
+                      <div class="col-md-4">Phone:</div>
+                    </div>
+                  </span>
+                  <div class="col-md-8">{{phone}} </div>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item><span class="material-icons mr-2">
+                  contact_mail
+                  </span> <span
+                    class="font-weight-bold mr-2">
+                    <div class="row">
+                      <div class="col-md-4">Email:</div>
+                    </div>
+                  </span>
+                  <div class="col-md-8">{{email}} </div>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item><span class="material-icons mr-2">
+                  local_mall
+                  </span> <span
+                    class="font-weight-bold mr-2">
+                    <div class="row">
+                      <div class="col-md-4">Company:</div>
+                    </div>
+                  </span>
+                  <div class="col-md-8">{{Company}} </div>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item><span class="material-icons mr-2">
+                  laptop_chromebook
+                  </span>
+                  <span class="font-weight-bold mr-2">
+                    <div class="row">
+                      <div class="col-md-4">Website:</div>
+                    </div>
+                  </span>
+                  <div class="col-md-8">{{web}} </div>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item><span class="material-icons mr-2">
+                  work
+                  </span>
+                  <span class="font-weight-bold mr-2">
+                    <div class="row">
+                      <div class="col-md-4">Job:</div>
+                    </div>
+                  </span>
+                  <div class="col-md-8">{{job}} </div>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item><span class="material-icons mr-2">
+                  info
+                  </span>
+                  <span class="font-weight-bold mr-2">
+                    <div class="row">
+                      <div class="col-md-4">Description:</div>
+                    </div>
+                  </span>
+                  <div class="col-md-8">{{desc}} </div>
+                </mat-list-item> 
+                <mat-divider></mat-divider>
+                <mat-list-item><span class="material-icons mr-2">
+                  home
+                  </span>
+                  <span class="font-weight-bold mr-2">
+                    <div class="row">
+                      <div class="col-md-4">Address:</div>
+                    </div>
+                  </span>
+                  <div class="col-md-8">{{address}} </div>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <!-- <mat-list-item><i class="fa fa-youtube-square mr-2" aria-hidden="true"></i></mat-list-item> -->
+                <!-- <mat-divider></mat-divider> -->
+              </mat-list>
+            </div>
+  
+  
+  
+          </div>
+  
+          <!-- <button mat-flat-button style="margin-top: 610px; margin-left: 110px;" class="round" color="primary" (click)="change2()">QR Code</button> -->
+          <button style="margin-top: 612px; margin-left: 160px;position: fixed;" mat-flat-button class="round"
+            color="accent" (click)="change2()">{{btn1}}</button>
+  
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </div>
+  <div class="footer">
+    <button class="btn btn2 mt-3" (click)="navigate()">Next</button>
+  </div>

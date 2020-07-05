@@ -1,0 +1,62 @@
+<div class="text-center" style="background-color: rgb(68, 127, 182);" [ngStyle]="{background: backgroundColor}">
+
+    <!-- <div class="text-center"> -->
+    <!-- <div class="content"> -->
+        <mat-spinner class="spinner" *ngIf="spinner"></mat-spinner>
+    <div *ngIf="!spinner">
+        <div >
+
+                
+                
+                                
+                                    <div class="material-icons share pr-2" style="float: right;" >
+                                        share
+                                    </div>
+                        
+                
+                    <div >
+                    
+                    
+
+                            <h4 class="text-center font mt-4" [ngStyle]="{color: fontColor}">{{appname}}</h4>
+                            <h5 class="text-center font mt-4" [ngStyle]="{color: fontColor}">{{dev}}</h5>
+
+                            <div class="text-center mt-4">
+                                <img class="img" [style.width.px]="ImgSize" [src]="imgURL"
+                                *ngIf="imgURL">
+                            </div>
+                            <h5 [ngStyle]="{color: fontColor}" class="text-center font2 mt-4">
+                                {{title}}
+                                
+                            </h5>
+                            <p [ngStyle]="{color: fontColor}" class="text-center font2 mt-4">
+                                {{info}}
+                                
+                            </p>
+
+                            
+                              
+                    
+                    </div>
+                    
+                    
+
+            
+                        <div class="text-center">
+                            <img class="img1" src="https://www.freepngimg.com/thumb/apple/58663-app-google-play-store-apple-download-hd-png.png" alt="">
+                        </div>
+<!-- <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt=""> -->
+            <div class="pt-1 text-center font"  [ngStyle]="{color: linkColor}">{{web}}</div>
+
+
+            <!-- <div class="text-center">
+                        
+                <button class="btn btn-block text-light"
+                    (click)="couponc()">{{btn}}</button>
+            </div> -->
+        </div>
+
+    
+    </div>
+
+</div>

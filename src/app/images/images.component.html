@@ -1,1 +1,335 @@
-<p>images works!</p>
+<div class="body">
+
+
+
+
+    <div class="container-fluid">
+  
+  
+      <div class="row">
+  
+        <div class="col-md-6 offset-md-1">
+          <div>
+  
+            <div style="margin-top: 10%;">
+              <!-- <input type="text"> -->
+  
+              <!-- <mat-form-field>
+                <input matInput placeholder="label" value="value">
+              </mat-form-field> -->
+              <!-- <div class="text-center"> -->
+  
+              <!-- </div> -->
+  
+            </div>
+            <div class="text-center">
+              <mat-form-field class="example-form-field" style="width: 400px;">
+  
+                <mat-label><span class="material-icons">
+                    qr_code
+                  </span> Coupon Name</mat-label>
+                <input matInput type="text" [(ngModel)]="cname">
+                <button mat-button   *ngIf="cname" matSuffix mat-icon-button aria-label="Clear" (click)="goToLink()">
+             {{btn}}
+                   
+                </button>
+              </mat-form-field>
+            </div>
+  
+            <div class="mt-2">
+  
+              <mat-accordion>
+                <mat-expansion-panel (closed)="panelOpenState = false" (opened)="panelOpenState = true" [expanded]="true"
+                  (click)="open(1,true)">
+                  <mat-expansion-panel-header class="bg-dark text-light">
+  
+                    <mat-panel-title>
+                      Coupon Generation
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      <span class="material-icons mr-2">
+                        design_services
+                      </span>
+                      Design & Customization
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+                  <div class="card">
+                    <div class="text-center font-weight-bold"><i class="material-icons">
+                        colorize
+                      </i> Choose Colors</div>
+                    <div class="card-body">
+  
+  
+  
+  
+  
+                      <input type="color" name="" id="" class="form-control" [(ngModel)]="backgroundColor">
+                      <app-color-picker [color]="backgroundColor" [heading]="'Background'"
+                        (event)="setColor('background', $event)"></app-color-picker>
+  
+  
+  
+  
+  
+  
+                      <div class="picker">
+                        <input type="color" name="" id="" class="form-control" [(ngModel)]="fontColor">
+                        <app-color-picker [color]="fontColor" [heading]="'Font'" (event)="setColor('font', $event)">
+                        </app-color-picker>
+                      </div>
+  
+                      <div class="picker">
+                        <input type="color" name="" id="" class="form-control" [(ngModel)]="linkColor">
+                        <app-color-picker [color]="linkColor" [heading]="'Links'" (event)="setColor('link', $event)">
+                        </app-color-picker>
+                      </div>
+  
+  
+                      <div class="color-picker">
+                        <div class="summary-info" (click)="toggleColors()">
+                          <div class="info">
+                            <p class="style">{{ heading }}</p>
+                            <p class="style-value">{{ color }}</p>
+                          </div>
+  
+                          <div class="circle" [ngStyle]="{'background': color}"></div>
+                        </div>
+  
+                        <div *ngIf="show" class="opened">
+                          <div class="colors">
+                            <div (click)="changeColor(paint)" *ngFor="let paint of defaultColors" class="circle"
+                              [ngStyle]="{'background': paint}"></div>
+                          </div>
+  
+                          <div class="hex-code">
+                            <p>Hex Code</p>
+                            <div class="g-input">
+                              <input type="text" maxlength="7" [value]="color"
+                                (keyup)="changeColorManual(paintInput.value)" (keydown.enter)="toggleColors()"
+                                #paintInput />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <mat-divider></mat-divider>
+  
+                      <div class="ml-3 font-weight-bold text-center"><span class="material-icons">
+                          image
+                        </span> Image </div>
+  
+                      <div> Size </div>
+                      <div style="color:red;" *ngIf="message">{{message}}</div>
+                      <mat-slider min="50" max="260" step="20.5" value={{ImgSize}} thumbLabel [displayWith]="formatLabel"
+                        tickInterval="1000" (change)="updateSetting($event)"></mat-slider>
+                      <input #file type="file" accept='image/*' (change)="preview(file.files)" class="btn">
+                    </div>
+  
+  
+                  </div>
+                </mat-expansion-panel>
+  
+              </mat-accordion>
+            </div>
+            <div class="mt-2">
+                <mat-accordion>
+                  <mat-expansion-panel (closed)="panelOpenState = true" (opened)="panelOpenState = false" [expanded]="true">
+                    <mat-expansion-panel-header class="bg-dark">
+                      <mat-panel-title class="">
+                        Coupon Generation
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        <span class="material-icons mr-2">
+                          perm_device_information
+                        </span> Basic Information
+    
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 offset-md-3">
+                                    <form >
+                                     
+                                        
+                                        
+                                        
+                                        <div class="form-group files">
+                                          <label>Upload Your File </label>
+                                          <input type="file" class="form-control" multiple="" [(ngModel)]="files">
+                                        </div>
+                                        
+                                      
+                                    </form>
+                                    
+                                    
+                                </div>
+                               
+                              </div>
+
+
+                            
+                        </div>
+                      </div>
+                    </div>
+                  </mat-expansion-panel>
+                  <!-- <mat-action-row>
+                              <button mat-button>Click me</button>
+                            </mat-action-row> -->
+    
+                </mat-accordion>
+              </div>
+            <div class="mt-2">
+                <mat-accordion>
+                    <mat-expansion-panel (closed)="panelOpenState = true" (opened)="panelOpenState = false" [expanded]="true">
+                        <mat-expansion-panel-header class="bg-dark">
+                            <mat-panel-title class="">
+                                Coupon Generation
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                <span class="material-icons mr-2">
+                                    perm_device_information
+                                </span> Basic Information
+
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="container">
+                                    <form>
+                                        <label for="fname">Title:</label>
+                                        <input type="text" id="title" name="title" class="ftext"
+                                            placeholder="Title for your gallery" [(ngModel)]="title">
+
+                                    
+                                        <label for="subject">Description:</label>
+                                        <textarea id="subject" name="subject"
+                                            placeholder="Write something about coupon" style="height:80px"
+                                            [(ngModel)]="desc"></textarea>
+                                            <label for="web">Website:</label>
+                                            <input type="text" id="web" name="web" class="ftext" placeholder="Your Website"
+                                              [(ngModel)]="web">
+                                        <label for="country">Button: </label>
+                                        <input type="text" id="btn" name="btn" class="ftext"
+                                            placeholder="Type Button text Here" [(ngModel)]="btn">
+                                        <!-- <select id="country" name="country">
+                  <option value="australia">50% off</option>
+                  <option value="canada">20 % off</option>
+                  <option value="usa">2 for 1</option>
+                </select> -->
+
+
+                                        <!-- <input type="submit" value="Submit"> -->
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-expansion-panel>
+                    <!-- <mat-action-row>
+                <button mat-button>Click me</button>
+              </mat-action-row> -->
+
+                </mat-accordion>
+            </div>
+            
+            
+  
+          </div>
+  
+        </div>
+  
+        <div class="col-md- 2 offset-md-1 mobile">
+          <!-- <mobile></mobile> -->
+  
+  
+          <!-- <button class="badge badge-pill badge-primary"></button>
+              <button class="badge badge-pill badge-primary">QR Code</button>
+            </span> -->
+  
+  
+          <div class="card-body" style="position:fixed; ">
+            <!-- <div class="form-inline">
+            <div class="box-3 ">
+              <div class="btn3 btn-three">
+                <span (click)="change2()" >{{btn1}}</span>
+                
+              </div>
+            </div>
+          
+           </div> -->
+  
+            <div class="smartphone"  [ngStyle]="{background: backgroundColor}" > 
+                
+                <div class="container">
+
+                    <h4 class="heading mt-5" [ngStyle]="{color: fontColor}">{{title}} </h4>
+                    <mat-card class="h-25 mt-5 " >
+                        <h6 class="text-center" [ngStyle]="{color: fontColor}">{{desc}} </h6>
+                    </mat-card>
+                    <!-- <h6 class="mt-5 text-center">{{web}} </h6> -->
+                    <!-- <h6 class="heading">{{title}} </h6> -->
+                <!-- <button class="btn btn-secondary"></button> -->
+                <div class="text-center mt-5 mb-5">
+                    <button  mat-raised-button [ngStyle]="{background: linkColor}" style="color: white;">{{btn}}</button>
+                </div>
+                    <div style="background-color: cornflowerblue;">
+                        <div class="gallery" >
+                
+                          
+                            
+                            <div class="gallery-item">
+                                <img class="gallery-image" [src]="imgURL">
+                            </div>
+                            <div class="gallery-item">
+                                <img class="gallery-image" src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=500&h=500&fit=crop" alt="person writing in a notebook beside by an iPad, laptop, printed photos, spectacles, and a cup of coffee on a saucer">
+                            </div>
+                            
+                    
+                            <!-- <div class="gallery-item">
+                                <img class="gallery-image" src="https://images.unsplash.com/photo-1515260268569-9271009adfdb?w=500&h=500&fit=crop" alt="sunset behind San Francisco city skyline">
+                            </div>
+                    
+                            <div class="gallery-item">
+                                <img class="gallery-image" src="https://images.unsplash.com/photo-1506045412240-22980140a405?w=500&h=500&fit=crop" alt="people holding umbrellas on a busy street at night lit by street lights and illuminated signs in Tokyo, Japan">
+                            </div>
+                    
+                            <div class="gallery-item">
+                                <img class="gallery-image" src="https://images.unsplash.com/photo-1514041181368-bca62cceffcd?w=500&h=500&fit=crop" alt="car interior from central back seat position showing driver and blurred view through windscreen of a busy road at night">
+                            </div>
+                    
+                            <div class="gallery-item">
+                                <img class="gallery-image" src="https://images.unsplash.com/photo-1445810694374-0a94739e4a03?w=500&h=500&fit=crop" alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA">
+                            </div>
+                    
+                            <div class="gallery-item">
+                                <img class="gallery-image" src="https://images.unsplash.com/photo-1486334803289-1623f249dd1e?w=500&h=500&fit=crop" alt="man wearing a black jacket, white shirt, blue jeans, and brown boots, playing a white electric guitar while sitting on an amp">
+                            </div> -->
+                    
+                        </div>
+                    </div>
+                
+                </div>
+  
+          </div>
+  
+          <!-- <button mat-flat-button style="margin-top: 610px; margin-left: 110px;" class="round" color="primary" (click)="change2()">QR Code</button> -->
+          <!-- <button style="margin-top: 612px; margin-left: 160px;position: fixed;" mat-flat-button class="round"
+            color="accent" (click)="change2()">{{btn1}}</button> -->
+  
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </div>
+  
+  <div class="footer">
+    <!-- <button style="padding-right: 600px;">
+      <span class="material-icons">
+        keyboard_arrow_left
+        </span></button> -->
+    <button  class="btn btn2 mt-3 text-center" (click)="navigate()">Next</button>
+  </div>

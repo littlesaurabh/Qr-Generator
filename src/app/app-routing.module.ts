@@ -24,7 +24,18 @@ import { VcardComponent } from './vcard/vcard.component'
 import { CouponComponent } from './preview/coupon/coupon.component';
 import {Mp3PComponent} from'./preview/mp3-p/mp3-p.component'
 import {PdfvComponent} from './preview/pdfv/pdfv.component'
-
+import { EventComponent } from './event/event.component';
+import { SocialmediapComponent } from './preview/socialmediap/socialmediap.component';
+import { WebsitepComponent } from './preview/websitep/websitep.component';
+import { BusinesspComponent } from './preview/businessp/businessp.component';
+import { CreateAppComponent } from './preview/create-app/create-app.component';
+import { VideopComponent } from './preview/videop/videop.component';
+import { VcardpComponent } from './preview/vcardp/vcardp.component';
+import { RatingpComponent } from './preview/ratingp/ratingp.component';
+import { FacebookpComponent } from './preview/facebookp/facebookp.component';
+import { ImagepComponent } from './preview/imagep/imagep.component';
+import { FeedbackpComponent } from './preview/feedbackp/feedbackp.component';
+import { EventpComponent } from './preview/eventp/eventp.component';
 // import {RatingComponent0}
 const routes: Routes = [
 
@@ -48,10 +59,22 @@ const routes: Routes = [
   { path: "video", component: VideoComponent },
   { path: "createapp", component: CreateappComponent },
   { path: "facebook", component: FacebookComponent },
+  { path: "event", component: EventComponent },
   { path: "vcard", component: VcardComponent },
   { path: "preview/coupon/:id", component: CouponComponent },
   { path: "preview/mp3/:id", component:Mp3PComponent},
   { path: "preview/pdf/:id", component:PdfvComponent},
+  { path: "preview/facebook/:id", component:FacebookpComponent},
+  { path: "preview/socialmedia/:id", component:SocialmediapComponent},
+  { path: "preview/website/:id", component:WebsitepComponent},
+  { path: "preview/business/:id", component:BusinesspComponent},
+  { path: "preview/video/:id", component:VideopComponent},
+  { path: "preview/vcard/:id", component:VcardpComponent},
+  { path: "preview/images/:id", component:ImagepComponent},
+  { path: "preview/feedback/:id", component:FeedbackpComponent},
+  { path: "preview/rating/:id", component:RatingpComponent},
+  { path: "preview/createapp/:id", component:CreateAppComponent},
+  { path: "preview/event/:id", component:EventpComponent},
   { path        : '**',
   pathMatch   : 'full', component: HomeComponent }
 ];
