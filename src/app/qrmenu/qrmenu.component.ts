@@ -30,12 +30,12 @@ export class QrmenuComponent implements OnInit {
       url: 'website'
     },
 
-    {
-      icon: "suitcase",
-      value: "Business Page",
-      desc: "Provide your company information",
-      url: 'business'
-    },
+    // {
+    //   icon: "suitcase",
+    //   value: "Business Page",
+    //   desc: "Provide your company information",
+    //   url: 'business'
+    // },
 
     {
       icon: "group",
@@ -69,24 +69,24 @@ export class QrmenuComponent implements OnInit {
 
 
 
-    {
-      icon: "pencil-square-o",
-      value: "Feedback",
-      desc: "Collect feedback and get rated",
-      url: 'feedback'
-    },
+    // {
+    //   icon: "pencil-square-o",
+    //   value: "Feedback",
+    //   desc: "Collect feedback and get rated",
+    //   url: 'feedback'
+    // },
     {
       icon: "star",
       value: "Rating",
       desc: "Collect feedback and get rated",
       url: 'rating'
     },
-    {
-      icon: "video-camera",
-      value: "Video",
-      desc: "Share one or more videos",
-      url: 'video'
-    },
+    // {
+    //   icon: "video-camera",
+    //   value: "Video",
+    //   desc: "Share one or more videos",
+    //   url: 'video'
+    // },
 
 
     {

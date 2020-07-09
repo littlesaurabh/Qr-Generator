@@ -2,22 +2,62 @@
     <div class="container-fluid">
         <div class="row ">
             <div class="col-md-6 offset-md-2 mt-5">
-                <mat-form-field class="example-form-field" style="width: 400px;">
+                <div class="text-center">
+                    <mat-form-field class="example-form-field" style="width: 400px;">
 
-                    <mat-label><span class="material-icons mr-2">
-                        local_offer
-                      </span> Coupon Name</mat-label>
-                    <input matInput type="text" [(ngModel)]="cname">
-                    <button mat-button *ngIf="cname" matSuffix mat-icon-button aria-label="Clear" (click)="cname=''">
-                      <mat-icon>close</mat-icon>
-                    </button>
-                  </mat-form-field>
+                        <mat-label><span class="material-icons mr-2">
+                                local_offer
+                            </span> QR  Name</mat-label>
+                        <input matInput type="text" [(ngModel)]="cname">
+                        <button mat-button *ngIf="cname" matSuffix mat-icon-button aria-label="Clear"
+                            (click)="cname=''">
+                            <mat-icon>close</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
                
-                    <div class="card mt-5">
+					<div class="mt-2">
+						<mat-accordion >
+							<mat-expansion-panel [expanded]="true" (closed)="panelOpenState = true" (opened)="panelOpenState = false">
+								<mat-expansion-panel-header class="bg-dark ">
+									<mat-panel-title class="text-white">
+										Website QR Generation
+									</mat-panel-title>
+									<mat-panel-description>
+										<span class="material-icons mr-2 text-white">
+                                            edit
+										</span> <span class=" text-white">Enter your website address</span>
+
+									</mat-panel-description>
+								</mat-expansion-panel-header>
+								<div class="card">
+									<div class="card-body">
+
+										<div class="container">
+                                            <p>Type in the website to link with your QR Code</p>
+										        
+                                            <mat-form-field class="example-full-width">
+                                                <mat-label>Website</mat-label>
+                                                <input matInput placeholder="www.google.com" value="" [(ngModel)]="website">
+                                               
+                                              </mat-form-field>
+                                              <button class="btn btn-primary ml-4" (click)="generateqr()">Generate QR</button>
+                                        
+										</div>
+									</div>
+								</div>
+							</mat-expansion-panel>
+							<!-- <mat-action-row>
+                        <button mat-button>Click me</button>
+                      </mat-action-row> -->
+
+						</mat-accordion>
+					</div>
+                    <!-- <div class="card mt-5">
                         <div class="card-header bg-dark text-light">
                             <h4><span class="material-icons mr-2 font-weight-bold">
-                                edit
-                                </span>Enter your website address</h4>
+                              
+                                </span></h4>
                         </div>
                         <div class="card-body">
                             <p>Type in the website to link with your QR Code</p>
@@ -31,15 +71,21 @@
                                   <button class="btn btn-primary" (click)="generateqr()">Generate QR</button>
                             
                         </div>
-                    </div>
+                    </div> -->
              
             </div>
             <div class="col-md-2">
-                <div class="mobile1">
-
-                    <mobile></mobile>
+                <div class="smartphone">
+                    
+                    <div class="text-center mt-5">
+                        <img [src]="img" alt="" *ngIf="img">
+                        <div  *ngIf="!img">
+                            <div class="loadingio-spinner-blocks-mkbnmfj5zxf"><div class="ldio-wg7jghwsqpk">
+                                <div style='left:16.745px;top:16.745px;animation-delay:0s'></div><div style='left:71.905px;top:16.745px;animation-delay:0.12254901960784313s'></div><div style='left:127.065px;top:16.745px;animation-delay:0.24509803921568626s'></div><div style='left:16.745px;top:71.905px;animation-delay:0.8578431372549019s'></div><div style='left:127.065px;top:71.905px;animation-delay:0.3676470588235294s'></div><div style='left:16.745px;top:127.065px;animation-delay:0.7352941176470588s'></div><div style='left:71.905px;top:127.065px;animation-delay:0.6127450980392157s'></div><div style='left:127.065px;top:127.065px;animation-delay:0.49019607843137253s'></div>
+                                </div></div>
+                        </div>
+                    </div>
                 </div>
-                       
             </div>
         </div>
         

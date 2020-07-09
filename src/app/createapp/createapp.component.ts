@@ -28,6 +28,8 @@ export class CreateappComponent implements OnInit {
   btn:any="Buy Now";
   validity:any="28 Jul 2020"
   public message: string;
+  play
+  appstore
   tnc:any=""
   web:any="https://www.amazon.com/"
   cname:any=""

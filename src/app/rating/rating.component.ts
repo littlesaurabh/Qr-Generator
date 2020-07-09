@@ -45,7 +45,7 @@ export class RatingComponent implements OnInit {
   ngOnInit() {
     this.backgroundColor = 'lightblue';
     this.fontColor = 'white';
-    this.linkColor = 'white';
+    this.linkColor = 'linkColor';
     // this.validity=moment().format('DD-MMM-YYYY');
   }
 

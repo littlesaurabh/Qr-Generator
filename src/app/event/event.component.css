@@ -68,12 +68,18 @@ margin-left: 130px;
   }
   .img{
     /* width: 260px; */
-    /* height: auto; */
-  border-radius: 50%;
+    height: 170px;
+  /* border-radius: 50%; */
   border: 2px solid black;
-  height: 100px;
-    width: 100px;
+  /* height: 100px; */
+    /* width: 100px; */
   
+  }
+  .text-over-img {
+    z-index:1;
+    font-size: 1.2em;
+    margin-top: -170px;
+    /* color: white; */
   }
   .mat-form-field + .mat-form-field {
       margin-left: 8px;

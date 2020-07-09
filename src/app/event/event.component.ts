@@ -22,12 +22,15 @@ export class EventComponent implements OnInit {
   ImgSize: any ;
   desc: any = ""
   Company: any = ""
-  imgURL: any = "https://upload.wikimedia.org/wikipedia/commons/6/67/Vector_Face_wearing_Spectacles.png";
+  imgURL: any = "https://www.pngitem.com/pimgs/m/279-2799272_people-meeting-icon-png-png-download-transparent-meeting.png";
   btn:any="Copy Code";
   validity:any="28 Jul 2020"
   public message: string;
   tnc:any=""
   web:any=""
+  about
+  organiser
+  title 
   mobile:any=""
   fax:""
   var:boolean=false;
@@ -38,6 +41,8 @@ export class EventComponent implements OnInit {
   job
   email
   fname
+  when
+  where
   lname
   cname:any=""
   btn1:any="QR Code";

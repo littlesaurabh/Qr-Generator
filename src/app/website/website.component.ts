@@ -12,6 +12,7 @@ export class WebsiteComponent implements OnInit {
   website:any;
   webd:any
   data:any
+  img:any
   ngOnInit() {
   }
  
@@ -25,7 +26,8 @@ export class WebsiteComponent implements OnInit {
     this.web.webqr(this.webd).subscribe(
       (success)=>{console.log(success)
       this.data=success
-    console.log(this.data.response.data)},
+    console.log(this.data.response.data)
+  this.img=this.data.response.data},
       (error)=>{console.log(error)}
     )
   }
