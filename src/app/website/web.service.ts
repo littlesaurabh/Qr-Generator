@@ -10,6 +10,6 @@ export class WebService {
   constructor(private http: HttpClient) { }
 
   webqr(data) {
-    return this.http.post("https://whispering-thicket-97767.herokuapp.com/webiste", data);
+    return this.http.post("https://whispering-thicket-97767.herokuapp.com/website", data);
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-createapp',
   templateUrl: './createapp.component.html',
@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateappComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
+  data:any;
+
 
 
   public backgroundColor: string;
@@ -36,7 +38,7 @@ export class CreateappComponent implements OnInit {
   btn1:any="QR Code";
   logo;
   img1:any="";
-  data:any;
+  data1:any;
   spinner=false
   appname:any="PIC INFINYG";
   dev:any="PicBros";
@@ -141,8 +143,47 @@ export class CreateappComponent implements OnInit {
       this.mp3 = e.target.files[0]
     }
   }
-
+image;
+img;
   navigate() {
+
+    const data = {
+      'user': '5ef247c92eafbd1ed045c9d7',
+      'image':this.image,
+      'app_name': this.cname,
+      'background': this.backgroundColor,
+      'font': this.fontColor,
+      'link': this.linkColor,
+      'appName':this.appname,
+      'developer':this.dev,
+      'title':this.title,
+      'website':this.web,
+      'information':this.info,
+      'appStore':this.appstore,
+      'playStore':this.play,
+      // 'aboutUs': this.about,
+      // 'headline': this.heading,
+      // 'description': this.desc,
+      // 'websiteUrl': this.web,
+      // 'websiteText': this.urltext,
+      // 'startDate': this.validity,
+      // 'facebookUrl': this.facebook,
+      // 'facebookText':this.fbtext,
+      // 'youtubeUrl': this.youtube,
+      // 'youtubeText': this.youtext,
+      'isActive':true,
+      'createdAt':Date.now(),
+      'scanned':0
+      // 'socialMedia_name':''
+    }
+    this.http.post("https://whispering-thicket-97767.herokuapp.com/app", data).subscribe(success=>{
+    this.data1=success
+    // console
+    this.img=this.data1.response.data
+    },
+    (error)=>{
+      console.log(error)
+    })
 
 
 

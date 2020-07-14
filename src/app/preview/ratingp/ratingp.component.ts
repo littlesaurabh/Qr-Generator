@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+
+
+
 
 @Component({
   selector: 'app-ratingp',
@@ -7,9 +12,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RatingpComponent implements OnInit {
 
-  constructor() { }
+  constructor(  private route: ActivatedRoute,private http:HttpClient) { }
 
- 
+  
+
 
   public backgroundColor: string;
   public fontColor: string="white";
@@ -43,13 +49,36 @@ export class RatingpComponent implements OnInit {
   btn1:any="QR Code";
   rate="2"
   currentRate = 6;
-  ngOnInit() {
-    this.backgroundColor = 'lightblue';
-    this.fontColor = 'white';
-    this.linkColor = 'white';
-    // this.validity=moment().format('DD-MMM-YYYY');
-  }
+ 
+id;coupo
+data1
+data
+image
+ngOnInit() {
+  this.backgroundColor = '#fff';
+  this.fontColor = '#222';
+  this.linkColor = '#4b4fce';
+  // this.validity=moment().format('DD-MMM-YYYY');
+  this.route.paramMap.subscribe(params => {
+    this.id = params.get('id')
+    this.loadData(this.id)
+  })
+}
+loadData(id) {
+  this.http.get("https://whispering-thicket-97767.herokuapp.com/rating/preview/" + id).subscribe(data => {
+    console.log("data1",data);
+  this.data1=data
+    this.data=this.data1.response.data
+    this.backgroundColor=this.data.design.colors.background
+    this.fontColor=this.data.design.colors.text
+    this.linkColor=this.data.design.colors.button
+    this.image=this.image+"/"+this.data.design.image
+    console.log(this.image)
 
+  }, err => {
+    console.log(err)
+  })
+}
   /**
    * Set color from color picker
    * @param {string} type

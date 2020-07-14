@@ -254,7 +254,7 @@
   
           </div>
           <div class="footer text-center">
-            <button class="btn btn2 mt-5" (click)="nagivate()">Next</button>
+            <button class="btn btn2 mt-5" (click)="navigate()">Next</button>
         </div>
         </div>
         
@@ -282,21 +282,31 @@
             <!-- <img src="" alt=""> -->
             <!-- class="img" [style.width.px]="ImgSize" [src]="imgURL"
 													*ngIf="imgURL" -->
-            <img [style.width.px]="ImgSize"  [src]="imgURL"  class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
-         <div class="jumbotron h-25" [ngStyle]="{background: backgroundColor}">
-     <h6 [ngStyle]="{color: fontColor}" class="font-weight-bold mt-2"> {{heading}}</h6>
-    
-     <mat-card-subtitle class="j" [ngStyle]="{color: fontColor}">{{about}}</mat-card-subtitle>
-        
+         <div  *ngIf="!data">
+          <img [style.width.px]="ImgSize"  [src]="imgURL"  class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+          <div class="jumbotron h-25" [ngStyle]="{background: backgroundColor}">
+      <h6 [ngStyle]="{color: fontColor}" class="font-weight-bold mt-2"> {{heading}}</h6>
+     
+      <mat-card-subtitle class="j" [ngStyle]="{color: fontColor}">{{about}}</mat-card-subtitle>
+         
+          </div>
+          <mat-list [ngStyle]="{background: linkColor}" >
+           <mat-list-item ><i class="fa fa-chrome mr-2" aria-hidden="true"></i>{{web}}<br>{{urltext}}</mat-list-item>
+           <mat-divider></mat-divider>
+           <mat-list-item><i class="fa fa-facebook-square mr-2" aria-hidden="true"></i>{{facebook}} <br>{{fbtext}}</mat-list-item>
+           <mat-divider></mat-divider>
+           <mat-list-item><i class="fa fa-youtube-square mr-2" aria-hidden="true"></i>{{youtube}}<br>{{youtext}}</mat-list-item>
+           <!-- <mat-divider></mat-divider> -->
+         </mat-list>
          </div>
-         <mat-list [ngStyle]="{background: linkColor}" >
-          <mat-list-item ><i class="fa fa-chrome mr-2" aria-hidden="true"></i>{{web}}<br>{{urltext}}</mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item><i class="fa fa-facebook-square mr-2" aria-hidden="true"></i>{{facebook}} <br>{{fbtext}}</mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item><i class="fa fa-youtube-square mr-2" aria-hidden="true"></i>{{youtube}}<br>{{youtext}}</mat-list-item>
-          <!-- <mat-divider></mat-divider> -->
-        </mat-list>
+        <div class="text-center mt-5"  >
+          <img [src]="img" alt="" *ngIf="img">
+          <div *ngIf="spinner">
+              <div class="loadingio-spinner-blocks-mkbnmfj5zxf"><div class="ldio-wg7jghwsqpk">
+                  <div style='left:16.745px;top:16.745px;animation-delay:0s'></div><div style='left:71.905px;top:16.745px;animation-delay:0.12254901960784313s'></div><div style='left:127.065px;top:16.745px;animation-delay:0.24509803921568626s'></div><div style='left:16.745px;top:71.905px;animation-delay:0.8578431372549019s'></div><div style='left:127.065px;top:71.905px;animation-delay:0.3676470588235294s'></div><div style='left:16.745px;top:127.065px;animation-delay:0.7352941176470588s'></div><div style='left:71.905px;top:127.065px;animation-delay:0.6127450980392157s'></div><div style='left:127.065px;top:127.065px;animation-delay:0.49019607843137253s'></div>
+                  </div></div>
+          </div>
+      </div>
           </div>
             
        

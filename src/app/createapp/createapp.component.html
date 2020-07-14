@@ -301,7 +301,8 @@
 
 					<div class="smartphone" style="background-color: rgb(68, 127, 182);position:fixed;" [ngStyle]="{background: backgroundColor}">
 
-						<!-- <div class="text-center"> -->
+					<ng-container *ngIf="!img">
+							<!-- <div class="text-center"> -->
 						<!-- <div class="content"> -->
 							<mat-spinner class="spinner" *ngIf="spinner"></mat-spinner>
 						<div *ngIf="!spinner">
@@ -359,6 +360,11 @@
 
 						
 						</div>
+					</ng-container>
+					<div class="text-center mt-5">
+						<img [src]="img" alt="" *ngIf="img">
+					</div>
+					
 					
 					</div>
 

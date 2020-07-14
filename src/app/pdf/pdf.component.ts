@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
+  
 @Component({
   selector: 'app-pdf',
   templateUrl: './pdf.component.html',
@@ -7,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PdfComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
+  data:any;
   pdfSrc:any="https://www.inf.ed.ac.uk/teaching/courses/nlu/assets/reading/Gurney_et_al.pdf"
   public backgroundColor: string;
   public fontColor: string;
@@ -34,7 +37,7 @@ export class PdfComponent implements OnInit {
   btn1:any="QR Code";
   image;
   img1:any="";
-  data:any;
+  data1:any;
   spinner=false
   ngOnInit() {
     this.backgroundColor = '#fff';
@@ -102,7 +105,7 @@ export class PdfComponent implements OnInit {
     }
   }
 
-  navigate() {
+  // navigate() {
     // this.spinner=true
     // this.img1=""
     // const data = {
@@ -136,6 +139,35 @@ export class PdfComponent implements OnInit {
     //   this.spinner=false
     // })
     
-  }
+  // }
+ 
+  navigate() {
+    // this.spinner=true
+    // this.img1=""
+    const data = {
+      'user': '5ef247c92eafbd1ed045c9d7',
+      'pdf_name': this.cname,
+      'file':this.pdf,
+      
+      // 'websiteText': this.urltext,
+      // 'startDate': this.validity,
+      // 'facebookUrl': this.facebook,
+      // 'facebookText':this.fbtext,
+      // 'youtubeUrl': this.youtube,
+      // 'youtubeText': this.youtext,
+      'isActive':true,
+      'scanned':0
+      // 'socialMedia_name':''
+    }
+    this.http.post("https://whispering-thicket-97767.herokuapp.com/pdf", data).subscribe(success=>{
+    this.data1=success
+    this.img1=this.data1.response.data
+    },
+    (error)=>{
+      console.log(error)
+
+    })
+
+}
 
 }

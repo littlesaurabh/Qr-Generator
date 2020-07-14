@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-vcard',
   templateUrl: './vcard.component.html',
@@ -7,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VcardComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private http:HttpClient) { }
   
 
+  img;
+  image;
   public backgroundColor: string;
   public fontColor: string="white";
   public linkColor: string;
@@ -20,6 +21,7 @@ export class VcardComponent implements OnInit {
   public imagePath;
   offer: any = "25%"
   ImgSize: any ;
+  data:any;
   desc: any = ""
   Company: any = ""
   imgURL: any = "https://upload.wikimedia.org/wikipedia/commons/6/67/Vector_Face_wearing_Spectacles.png";
@@ -136,4 +138,38 @@ export class VcardComponent implements OnInit {
     }
   
   }
+  navigate() {
+    // this.spinner=true
+    // this.img1=""
+    const data = {
+      'user': '5ef247c92eafbd1ed045c9d7',
+      'vCard_name': this.cname,
+      'background': this.backgroundColor,
+      'font': this.fontColor,
+      'link': this.linkColor,
+      'image':this.image,
+      'firstName':this.fname,
+      'lastName':this.lname,
+      'phoneNumber':this.phone,
+      'mobileNumber':this.mobile,
+      'faxNumber':this.fax,
+      'company':this.Company,
+      'email':this.email,
+      'job':this.job,
+      'address':this.address,
+      'description':this.desc,
+      'website':this.web,
+
+    
+    }
+    this.http.post("https://whispering-thicket-97767.herokuapp.com/vcard", data).subscribe(success=>{
+    this.data=success
+    console.log(success)
+    this.img=this.data.response.data
+    },
+    (error)=>{
+      console.log(error)
+    })
+
+}
 }

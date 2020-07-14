@@ -138,6 +138,7 @@ export class CouponsComponent implements OnInit {
     this.img1=""
     const data = {
       'user': '5ef247c92eafbd1ed045c9d7',
+      'image':this.image,
       'coupon_name': this.cname,
       'design_color_background': this.backgroundColor,
       'design_color_text': this.fontColor,

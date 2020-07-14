@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-facebook',
   templateUrl: './facebook.component.html',
   styleUrls: ['./facebook.component.css']
 })
 export class FacebookComponent implements OnInit {
+  
 
-  constructor() { }
-
- 
+  constructor(private http:HttpClient) { }
+  data:any;
 
   public backgroundColor: string;
   public fontColor: string="white";
@@ -144,4 +144,43 @@ export class FacebookComponent implements OnInit {
     }
   
   }
+  img;
+  image;
+  navigate() {
+    // this.spinner=true
+    // this.img1=""
+    const data = {
+      'user': '5ef247c92eafbd1ed045c9d7',
+      'facebook_name': this.cname,
+      'background': this.backgroundColor,
+      'font': this.fontColor,
+      'link': this.linkColor,
+      'image':this.image,
+      'url':this.fb,
+      'name':this.fname,
+      'title':this.title,
+
+      // 'aboutUs': this.about,
+      // 'headline': this.heading,
+      // 'description': this.desc,
+      'website': this.web,
+      // 'websiteText': this.urltext,
+      // 'startDate': this.validity,
+      // 'facebookUrl': this.facebook,
+      // 'facebookText':this.fbtext,
+      // 'youtubeUrl': this.youtube,
+      // 'youtubeText': this.youtext,
+      'isActive':true,
+      'scanned':0
+      // 'socialMedia_name':''
+    }
+    this.http.post("https://whispering-thicket-97767.herokuapp.com/facebook", data).subscribe(success=>{
+    this.data=success
+    this.img=this.data.response.data
+    },
+    (error)=>{
+      console.log(error)
+    })
+
+}
 }

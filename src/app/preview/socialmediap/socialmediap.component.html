@@ -1,23 +1,32 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
 
-          <div class="text-center" style="background-color: rgb(68, 127, 182);" >
-            <!-- <img src="" alt=""> -->
-            <!-- class="img" [style.width.px]="ImgSize" [src]="imgURL"
-													*ngIf="imgURL" -->
-            <img [style.width.px]="ImgSize"  [src]="imgURL"  class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
-         <div class="jumbotron h-25" [ngStyle]="{background: backgroundColor}">
-     <h6 [ngStyle]="{color: fontColor}" class="font-weight-bold mt-2"> {{heading}}</h6>
-    
-     <mat-card-subtitle class="j" [ngStyle]="{color: fontColor}">{{about}}</mat-card-subtitle>
+      <div class="card-body bg-dark">
+        <div class="text-center" style="background-color: rgb(68, 127, 182);" >
+          <!-- <img src="" alt=""> -->
+          <!-- class="img" [style.width.px]="ImgSize" [src]="imgURL"
+                        *ngIf="imgURL" -->
+          <img [style.width.px]="ImgSize"  [src]="imgURL"  class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+       <div class="jumbotron h-25" [ngStyle]="{background: backgroundColor}">
+   <h6 [ngStyle]="{color: fontColor}" class="font-weight-bold mt-2"> {{heading}}</h6>
+  
+   <mat-card-subtitle class="j" [ngStyle]="{color: fontColor}">{{about}}</mat-card-subtitle>
+      
+       </div>
+       <mat-list [ngStyle]="{background: linkColor}" >
+        <mat-list-item ><i class="fa fa-chrome mr-2" aria-hidden="true"></i>{{web}}<br>{{urltext}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item><i class="fa fa-facebook-square mr-2" aria-hidden="true"></i>{{facebook}} <br>{{fbtext}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item><i class="fa fa-youtube-square mr-2" aria-hidden="true"></i>{{youtube}}<br>{{youtext}}</mat-list-item>
+        <!-- <mat-divider></mat-divider> -->
+      </mat-list>
+        </div>
+      </div>
         
-         </div>
-         <mat-list [ngStyle]="{background: linkColor}" >
-          <mat-list-item ><i class="fa fa-chrome mr-2" aria-hidden="true"></i>{{web}}<br>{{urltext}}</mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item><i class="fa fa-facebook-square mr-2" aria-hidden="true"></i>{{facebook}} <br>{{fbtext}}</mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item><i class="fa fa-youtube-square mr-2" aria-hidden="true"></i>{{youtube}}<br>{{youtext}}</mat-list-item>
-          <!-- <mat-divider></mat-divider> -->
-        </mat-list>
-          </div>
-            
-       
+   
+
+    </div>
+  </div>
+</div>

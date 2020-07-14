@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-social-media',
   templateUrl: './social-media.component.html',
@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SocialMediaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
- 
-
+  spinner=false
+  img:any;
   public backgroundColor: string;
   public fontColor: string;
   public linkColor: string;
@@ -34,6 +34,7 @@ export class SocialMediaComponent implements OnInit {
   tnc:any=""
   web:any="https://www.amazon.com/"
   cname:any=""
+  data:any
   btn1:any="QR Code";
   ngOnInit() {
     this.backgroundColor = '#fff';
@@ -126,4 +127,37 @@ export class SocialMediaComponent implements OnInit {
     }
   
   }
+  navigate() {
+    this.spinner=true
+    // this.img1=""
+    const data = {
+      'user': '5ef247c92eafbd1ed045c9d7',
+      'socialMedia_name': this.cname,
+      'background': this.backgroundColor,
+      'font': this.fontColor,
+      'link': this.linkColor,
+      'aboutUs': this.about,
+      'headline': this.heading,
+      // 'description': this.desc,
+      'websiteUrl': this.web,
+      'websiteText': this.urltext,
+      // 'startDate': this.validity,
+      'facebookUrl': this.facebook,
+      'facebookText':this.fbtext,
+      'youtubeUrl': this.youtube,
+      'youtubeText': this.youtext,
+      'isActive':true,
+      'scanned':0
+      // 'socialMedia_name':''
+    }
+    this.http.post("https://whispering-thicket-97767.herokuapp.com/socialMedia", data).subscribe(success=>{
+      console.log(data,success)
+    this.data=success,
+    this.img=this.data.response.data
+    },
+    (error)=>{
+      console.log(error)
+    })
+    this.spinner=false
+}
 }

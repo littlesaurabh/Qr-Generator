@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-images',
   templateUrl: './images.component.html',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImagesComponent implements OnInit {
 
-  constructor() { }
 
-  
+
+  constructor(private http:HttpClient) { }
+  data:any;
+
 
   public backgroundColor: string;
   public fontColor: string="white";
@@ -139,4 +141,35 @@ export class ImagesComponent implements OnInit {
     }
   
   }
+  navigate() {
+    // this.spinner=true
+    // this.img1=""
+    const data = {
+      'user': '5ef247c92eafbd1ed045c9d7',
+      'socialMedia_name': this.cname,
+      'background': this.backgroundColor,
+      'font': this.fontColor,
+      'link': this.linkColor,
+      // 'aboutUs': this.about,
+      'headline': this.heading,
+      // 'description': this.desc,
+      'websiteUrl': this.web,
+      // 'websiteText': this.urltext,
+      // 'startDate': this.validity,
+      // 'facebookUrl': this.facebook,
+      // 'facebookText':this.fbtext,
+      // 'youtubeUrl': this.youtube,
+      // 'youtubeText': this.youtext,
+      'isActive':true,
+      'scanned':0
+      // 'socialMedia_name':''
+    }
+    this.http.post("https://whispering-thicket-97767.herokuapp.com/socialMedia", data).subscribe(success=>{
+    this.data=success
+    },
+    (error)=>{
+      console.log(error)
+    })
+
+}
 }

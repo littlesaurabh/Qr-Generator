@@ -242,7 +242,35 @@ vertical-align: middle;
   .btn2:hover{
    -webkit-transform: scale(1.1);
   }
-  
+  @keyframes ldio-wg7jghwsqpk {
+    0% { background: #689cc5 }
+    12.5% { background: #689cc5 }
+    12.625% { background: #93dbe9 }
+    100% { background: #93dbe9 }
+  }
+  .ldio-wg7jghwsqpk div {
+    position: absolute;
+    width: 53.19px;
+    height: 53.19px;
+    background: #93dbe9;
+    animation: ldio-wg7jghwsqpk 0.9803921568627451s linear infinite;
+  }
+  .loadingio-spinner-blocks-mkbnmfj5zxf {
+    width: 197px;
+    height: 197px;
+    display: inline-block;
+    overflow: hidden;
+    background: #f1f2f3;
+  }
+  .ldio-wg7jghwsqpk {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    transform-origin: 0 0; /* see note above */
+  }
+  .ldio-wg7jghwsqpk div { box-sizing: content-box; }
   /* Add a background color and some padding around the form */
   /* .container {
     border-radius: 5px;

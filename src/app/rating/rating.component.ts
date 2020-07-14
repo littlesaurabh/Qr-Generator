@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+
+
 
 @Component({
   selector: 'app-rating',
@@ -7,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RatingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
 
   public backgroundColor: string;
@@ -16,6 +20,9 @@ export class RatingComponent implements OnInit {
   coupon: boolean = false;
   couponcode: any="SALE25OFF";
   heading: any = ""
+  data:any;
+  image;
+  img;
   public imagePath;
   offer: any = "25%"
   ImgSize: any ;
@@ -137,4 +144,40 @@ export class RatingComponent implements OnInit {
     }
   
   }
+  navigate() {
+    // this.spinner=true
+    // this.img1=""
+    const data = {
+      'user': '5ef247c92eafbd1ed045c9d7',
+      'rating_name': this.cname,
+      'background': this.backgroundColor,
+      'font': this.fontColor,
+      'link': this.linkColor,
+      'image':this.image,
+      'email':this.email,
+      'comapny':this.Company,
+      'website':this.web,
+      // 'aboutUs': this.about,
+      // 'headline': this.heading,
+      // 'description': this.desc,
+      // 'websiteUrl': this.web,
+      // 'websiteText': this.urltext,
+      // 'startDate': this.validity,
+      // 'facebookUrl': this.facebook,
+      // 'facebookText':this.fbtext,
+      // 'youtubeUrl': this.youtube,
+      // 'youtubeText': this.youtext,
+      'isActive':true,
+      'scanned':0
+      // 'socialMedia_name':''
+    }
+    this.http.post("https://whispering-thicket-97767.herokuapp.com/socialMedia", data).subscribe(success=>{
+      this.data=success,
+      this.img=this.data.response.data
+      },
+      (error)=>{
+        console.log(error)
+      })
+  
+}
 }

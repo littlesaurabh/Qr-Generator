@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+  
 
 @Component({
   selector: 'app-event',
@@ -6,9 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./event.component.css']
 })
 export class EventComponent implements OnInit {
-
-  constructor() { }
-
+  constructor(private http:HttpClient) { }
+  data:any;
  
 
   public backgroundColor: string;
@@ -141,4 +143,55 @@ export class EventComponent implements OnInit {
     }
   
   }
+  image;
+  img;
+  contact;
+  src;
+  navigate() {
+    
+    // this.spinner=true
+    // this.img1=""
+    const data = {
+      'user': '5ef247c92eafbd1ed045c9d7',
+      'event_name':this.cname,
+      'image':this.image,
+      'background': this.backgroundColor,
+      'font': this.fontColor,
+      'link': this.linkColor,
+      // 'aboutUs': this.about,
+      'organiser': this.organiser,
+      'title':this.title,
+      'button':this.btn,
+      'when':this.when,
+      'where':this.where,
+      'address':this.address,
+      'contact':this.contact,
+      'phone':this.phone,
+      'email':this.email,
+
+      'description': this.desc,
+      'website': this.web,
+      // 'websiteText': this.urltext,
+      // 'startDate': this.validity,
+      // 'facebookUrl': this.facebook,
+      // 'facebookText':this.fbtext,
+      // 'youtubeUrl': this.youtube,
+      // 'youtubeText': this.youtext,
+      'isActive':true,
+      'scanned':0
+      // 'socialMedia_name':''
+    }
+    
+    this.http.post("https://whispering-thicket-97767.herokuapp.com/event", data).subscribe(success=>{
+      console.log(success)
+    this.data=success,
+    this.img=this.data.response.data
+
+    console.log(this.img)
+    },
+    (error)=>{
+      console.log(error)
+    })
+
+}
 }
