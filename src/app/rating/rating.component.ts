@@ -168,14 +168,14 @@ export class RatingComponent implements OnInit {
       // 'facebookText':this.fbtext,
       // 'youtubeUrl': this.youtube,
       // 'youtubeText': this.youtext,
-      'isActive':true,
-      'scanned':0
+      // 'isActive':true,
+      // 'scanned':0
       // 'socialMedia_name':''
     }
-    const formData = new FormData();
-    Object.keys(data).forEach(key => formData.append(key, data[key]));
+    // const formData = new FormData();
+    // Object.keys(data).forEach(key => formData.append(key, data[key]));
 
-    formData.append('image', this.image);
+    // formData.append('image', this.image);
     this.http.post("https://whispering-thicket-97767.herokuapp.com/rating", data).subscribe(success=>{
       this.data=success,
       this.img=this.data.response.data

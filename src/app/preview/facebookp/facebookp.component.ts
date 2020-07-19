@@ -28,7 +28,7 @@ export class FacebookpComponent implements OnInit {
   ImgSize: any ;
   desc: any = ""
   Company: any = "Lake Cruisers"
-  imgURL: any = "";
+  imgURL: any = "https://www.pngitem.com/pimgs/m/33-336397_like-us-on-facebook-png-black-white-find.png";
   btn:any="Copy Code";
   validity:any="28 Jul 2020"
   public message: string;
@@ -81,7 +81,7 @@ export class FacebookpComponent implements OnInit {
       this.fontColor=this.data.design.colors.text
       this.linkColor=this.data.design.colors.button
       this.image=this.image+"/"+this.data.design.image
-      this.imgURL="https://whispering-thicket-97767.herokuapp.com/"+this.data.image
+      // this.imgURL="https://whispering-thicket-97767.herokuapp.com/"+this.data.image
       console.log(this.image)
 
     }, err => {
