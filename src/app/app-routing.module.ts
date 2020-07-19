@@ -22,8 +22,8 @@ import { CreateappComponent } from './createapp/createapp.component'
 import { FacebookComponent } from './facebook/facebook.component'
 import { VcardComponent } from './vcard/vcard.component'
 import { CouponComponent } from './preview/coupon/coupon.component';
-import {Mp3PComponent} from'./preview/mp3-p/mp3-p.component'
-import {PdfvComponent} from './preview/pdfv/pdfv.component'
+import { Mp3PComponent } from './preview/mp3-p/mp3-p.component'
+import { PdfvComponent } from './preview/pdfv/pdfv.component'
 import { EventComponent } from './event/event.component';
 import { SocialmediapComponent } from './preview/socialmediap/socialmediap.component';
 import { WebsitepComponent } from './preview/websitep/websitep.component';
@@ -62,25 +62,27 @@ const routes: Routes = [
   { path: "event", component: EventComponent },
   { path: "vcard", component: VcardComponent },
   { path: "preview/coupon/:id", component: CouponComponent },
-  { path: "mp3/preview/:id", component:Mp3PComponent},
-  { path: "pdf/preview/:id", component:PdfvComponent},
-  { path: "facebook/preview/:id", component:FacebookpComponent},
-  { path: "socialmedia/preview/:id", component:SocialmediapComponent},
-  { path: "website/preview/:id", component:WebsitepComponent},
-  { path: "business/preview/:id", component:BusinesspComponent},
-  { path: "video/preview/:id", component:VideopComponent},
-  { path: "vCard/preview/:id", component:VcardpComponent},
-  { path: "images/preview/:id", component:ImagepComponent},
-  { path: "feedback/preview/:id", component:FeedbackpComponent},
-  { path: "rating/preview/:id", component:RatingpComponent},
-  { path: "app/preview/:id", component:CreateAppComponent},
-  { path: "event/preview/:id", component:EventpComponent},
-  { path        : '**',
-  pathMatch   : 'full', component: HomeComponent }
+  { path: "mp3/preview/:id", component: Mp3PComponent },
+  { path: "pdf/preview/:id", component: PdfvComponent },
+  { path: "facebook/preview/:id", component: FacebookpComponent },
+  { path: "socialmedia/preview/:id", component: SocialmediapComponent },
+  { path: "website/preview/:id", component: WebsitepComponent },
+  { path: "business/preview/:id", component: BusinesspComponent },
+  { path: "video/preview/:id", component: VideopComponent },
+  { path: "vCard/preview/:id", component: VcardpComponent },
+  { path: "images/preview/:id", component: ImagepComponent },
+  { path: "feedback/preview/:id", component: FeedbackpComponent },
+  { path: "rating/preview/:id", component: RatingpComponent },
+  { path: "app/preview/:id", component: CreateAppComponent },
+  { path: "event/preview/:id", component: EventpComponent },
+  {
+    path: '**',
+    pathMatch: 'full', component: HomeComponent
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule],
 })
 export class AppRoutingModule { }
