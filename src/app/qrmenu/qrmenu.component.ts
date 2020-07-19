@@ -122,12 +122,12 @@ export class QrmenuComponent implements OnInit {
       desc: "Play an audio file",
       url: 'mp3'
     },
-    {
-      icon: "picture-o",
-      value: "Images",
-      desc: "Show a series of photo",
-      url: 'images'
-    }
+    // {
+    //   icon: "picture-o",
+    //   value: "Images",
+    //   desc: "Show a series of photo",
+    //   url: 'images'
+    // }
 
 
 
