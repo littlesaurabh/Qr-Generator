@@ -89,12 +89,12 @@ export class QrmenuComponent implements OnInit {
     // },
 
 
-    {
-      icon: "calendar-check-o",
-      value: "Event",
-      desc: "Promote your event",
-      url: 'event'
-    },
+    // {
+    //   icon: "calendar-check-o",
+    //   value: "Event",
+    //   desc: "Promote your event",
+    //   url: 'event'
+    // },
 
 
     {

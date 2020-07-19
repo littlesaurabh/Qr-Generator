@@ -58,8 +58,14 @@ ngOnInit() {
     this.loadData(this.id)
   })
 }
+goToLink1(){
+  window.open(this.data.app.appStore, "_blank");
+}
+goToLink2(){
+  window.open(this.data.app.playStore, "_blank");
+}
 loadData(id) {
-  this.http.get("https://whispering-thicket-97767.herokuapp.com/coupon/app/" + id).subscribe(data => {
+  this.http.get("https://whispering-thicket-97767.herokuapp.com/app/preview/" + id).subscribe(data => {
     console.log("data1",data);
   this.data1=data
     this.data=this.data1.response.data
@@ -88,6 +94,7 @@ loadData(id) {
   goToLink(){
     window.open(this.web, "_blank");
 }
+ 
   public setColor(type: string, color: string) {
     switch (type) {
       case 'background':

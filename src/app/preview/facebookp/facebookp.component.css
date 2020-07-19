@@ -2,6 +2,10 @@
 margin-left: 130px;
 /* margin-top: 1px; */
 /* }  */
+mat-spinner{
+  margin-top: 20%;
+  left: 50%;
+  }
 .mat-divider{
     padding-bottom:25px;
    

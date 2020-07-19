@@ -159,6 +159,7 @@ export class PdfComponent implements OnInit {
       'scanned':0
       // 'socialMedia_name':''
     }
+    
     this.http.post("https://whispering-thicket-97767.herokuapp.com/pdf", data).subscribe(success=>{
     this.data1=success
     this.img1=this.data1.response.data

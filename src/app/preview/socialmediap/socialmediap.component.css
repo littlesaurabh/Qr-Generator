@@ -2,6 +2,25 @@
 margin-left: 130px;
 /* margin-top: 1px; */
 /* }  */
+@media screen and (max-width: 600px) {
+
+  
+  mat-spinner{
+    margin-top: 20%;
+    left: 50%;
+    }
+}
+  .spinner{
+      left: 50%;
+     top:40%
+  }
+ 
+  .container-fluid{
+    height: 100%;
+    top: 10%;
+    /* width: 200%; */
+    background-color: black;
+  }
 .mat-divider{
     margin-bottom: 26px;
   }

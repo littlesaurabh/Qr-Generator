@@ -147,7 +147,7 @@ export class VcardComponent implements OnInit {
       'background': this.backgroundColor,
       'font': this.fontColor,
       'link': this.linkColor,
-      'image':this.image,
+      // 'image':this.image,
       'firstName':this.fname,
       'lastName':this.lname,
       'phoneNumber':this.phone,
@@ -162,6 +162,10 @@ export class VcardComponent implements OnInit {
 
     
     }
+    const formData = new FormData();
+    Object.keys(data).forEach(key => formData.append(key, data[key]));
+
+    formData.append('image', this.image);
     this.http.post("https://whispering-thicket-97767.herokuapp.com/vcard", data).subscribe(success=>{
     this.data=success
     console.log(success)

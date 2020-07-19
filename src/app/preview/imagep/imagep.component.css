@@ -6,7 +6,10 @@ margin-left: 130px;
 .mat-divider{
     margin-bottom: 20px;
   }
-  
+  mat-spinner{
+    margin-top: 20%;
+    left: 50%;
+    }
   
   .c{
     font-weight: bold;

@@ -64,6 +64,12 @@ export class CreateappComponent implements OnInit {
   goToLink(){
     window.open(this.web, "_blank");
 }
+  goToLink1(){
+    window.open(this.play, "_blank");
+}
+  goToLink2(){
+    window.open(this.appstore, "_blank");
+}
   public setColor(type: string, color: string) {
     switch (type) {
       case 'background':
@@ -149,7 +155,7 @@ img;
 
     const data = {
       'user': '5ef247c92eafbd1ed045c9d7',
-      'image':this.image,
+      // 'image':this.image,
       'app_name': this.cname,
       'background': this.backgroundColor,
       'font': this.fontColor,
@@ -176,6 +182,10 @@ img;
       'scanned':0
       // 'socialMedia_name':''
     }
+    const formData = new FormData();
+    Object.keys(data).forEach(key => formData.append(key, data[key]));
+
+    formData.append('image', this.image);
     this.http.post("https://whispering-thicket-97767.herokuapp.com/app", data).subscribe(success=>{
     this.data1=success
     // console

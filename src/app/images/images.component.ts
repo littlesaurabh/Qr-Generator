@@ -141,6 +141,7 @@ export class ImagesComponent implements OnInit {
     }
   
   }
+  image
   navigate() {
     // this.spinner=true
     // this.img1=""
@@ -164,6 +165,10 @@ export class ImagesComponent implements OnInit {
       'scanned':0
       // 'socialMedia_name':''
     }
+    const formData = new FormData();
+    Object.keys(data).forEach(key => formData.append(key, data[key]));
+
+    formData.append('image', this.image);
     this.http.post("https://whispering-thicket-97767.herokuapp.com/socialMedia", data).subscribe(success=>{
     this.data=success
     },

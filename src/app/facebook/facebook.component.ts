@@ -155,7 +155,7 @@ export class FacebookComponent implements OnInit {
       'background': this.backgroundColor,
       'font': this.fontColor,
       'link': this.linkColor,
-      'image':this.image,
+      // 'image':this.image,
       'url':this.fb,
       'name':this.fname,
       'title':this.title,
@@ -174,6 +174,10 @@ export class FacebookComponent implements OnInit {
       'scanned':0
       // 'socialMedia_name':''
     }
+    const formData = new FormData();
+    Object.keys(data).forEach(key => formData.append(key, data[key]));
+
+    formData.append('image', this.image);
     this.http.post("https://whispering-thicket-97767.herokuapp.com/facebook", data).subscribe(success=>{
     this.data=success
     this.img=this.data.response.data

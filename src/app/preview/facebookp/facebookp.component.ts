@@ -23,11 +23,12 @@ export class FacebookpComponent implements OnInit {
   couponcode: any="SALE25OFF";
   heading: any = ""
   public imagePath;
+  errorMessage
   offer: any = "25%"
   ImgSize: any ;
   desc: any = ""
   Company: any = "Lake Cruisers"
-  imgURL: any = "https://www.pngitem.com/pimgs/m/33-336397_like-us-on-facebook-png-black-white-find.png";
+  imgURL: any = "";
   btn:any="Copy Code";
   validity:any="28 Jul 2020"
   public message: string;
@@ -65,19 +66,27 @@ export class FacebookpComponent implements OnInit {
       this.loadData(this.id)
     })
   }
+  data3;
   loadData(id) {
-    this.http.get("https://whispering-thicket-97767.herokuapp.com/coupon/facebook/" + id).subscribe(data => {
+    this.errorMessage=""
+    this.http.get("https://whispering-thicket-97767.herokuapp.com/facebook/preview/" + id).subscribe(data => {
       console.log("data1",data);
-    this.data1=data
+      // this.data3=this.data
+      // if(this.data3.response.status=='500')
+      // this.errorMessage=this.data3.response.status
+      this.data1=data
       this.data=this.data1.response.data
+      
       this.backgroundColor=this.data.design.colors.background
       this.fontColor=this.data.design.colors.text
       this.linkColor=this.data.design.colors.button
       this.image=this.image+"/"+this.data.design.image
+      this.imgURL="https://whispering-thicket-97767.herokuapp.com/"+this.data.image
       console.log(this.image)
 
     }, err => {
       console.log(err)
+    
     })
   }
   /**
@@ -99,7 +108,7 @@ export class FacebookpComponent implements OnInit {
     window.open(this.web, "_blank");
 }
   goToLink1(){
-    window.open(this.fb, "_blank");
+    window.open(this.data.basic_information.url, "_blank");
 }
   public setColor(type: string, color: string) {
     switch (type) {

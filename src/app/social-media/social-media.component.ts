@@ -32,6 +32,7 @@ export class SocialMediaComponent implements OnInit {
   validity:any="28 Jul 2020"
   public message: string;
   tnc:any=""
+  image
   web:any="https://www.amazon.com/"
   cname:any=""
   data:any
@@ -150,6 +151,10 @@ export class SocialMediaComponent implements OnInit {
       'scanned':0
       // 'socialMedia_name':''
     }
+    // const formData = new FormData();
+    // Object.keys(data).forEach(key => formData.append(key, data[key]));
+
+    // formData.append('image', this.image);
     this.http.post("https://whispering-thicket-97767.herokuapp.com/socialMedia", data).subscribe(success=>{
       console.log(data,success)
     this.data=success,

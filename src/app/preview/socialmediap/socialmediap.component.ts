@@ -40,6 +40,7 @@ export class SocialmediapComponent implements OnInit {
   btn1:any="QR Code";
   id;coupo
   data1
+  data2
   data
   image
   ngOnInit() {
@@ -54,8 +55,12 @@ export class SocialmediapComponent implements OnInit {
   }
   loadData(id) {
     this.http.get("https://whispering-thicket-97767.herokuapp.com/socialmedia/preview/" + id).subscribe(data => {
-      console.log("data1",data);
+
+
+      
     this.data1=data
+    console.log("data1",this.data1.response);
+   this.data2=this.data1.response.data
       this.data=this.data1.response.data
       this.backgroundColor=this.data.design.colors.background
       this.fontColor=this.data.design.colors.text

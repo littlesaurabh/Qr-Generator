@@ -5,7 +5,10 @@ margin-left: 130px;
 .mat-divider{
     margin-bottom: 20px;
   }
-  
+  mat-spinner{
+    margin-top: 20%;
+    margin-left: 20%;
+    }
   
   .c{
     font-weight: bold;
@@ -59,6 +62,11 @@ margin-left: 130px;
     border: 2px solid black;
   }
   .img1{
+    width: 160px;
+    height: auto;
+    
+  }
+  .img2{
     width: 160px;
     height: auto;
     

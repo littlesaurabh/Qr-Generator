@@ -153,10 +153,11 @@ export class RatingComponent implements OnInit {
       'background': this.backgroundColor,
       'font': this.fontColor,
       'link': this.linkColor,
-      'image':this.image,
+      // 'image':this.image,
       'email':this.email,
       'comapny':this.Company,
       'website':this.web,
+      'rating':this.currentRate,
       // 'aboutUs': this.about,
       // 'headline': this.heading,
       // 'description': this.desc,
@@ -171,7 +172,11 @@ export class RatingComponent implements OnInit {
       'scanned':0
       // 'socialMedia_name':''
     }
-    this.http.post("https://whispering-thicket-97767.herokuapp.com/socialMedia", data).subscribe(success=>{
+    const formData = new FormData();
+    Object.keys(data).forEach(key => formData.append(key, data[key]));
+
+    formData.append('image', this.image);
+    this.http.post("https://whispering-thicket-97767.herokuapp.com/rating", data).subscribe(success=>{
       this.data=success,
       this.img=this.data.response.data
       },
