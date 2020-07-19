@@ -100,7 +100,7 @@ export class PdfComponent implements OnInit {
 
   changeFile(e) {
     console.log(e.target);
-    if (e.target.name === 'image') {
+    if (e.target.name === 'pdf') {
       this.image = e.target.files[0]
     }
   }
@@ -142,23 +142,11 @@ export class PdfComponent implements OnInit {
   // }
  
   navigate() {
-    // this.spinner=true
-    // this.img1=""
-    const data = {
-      'user': '5ef247c92eafbd1ed045c9d7',
-      'pdf_name': this.cname,
-      'file':this.pdf,
-      
-      // 'websiteText': this.urltext,
-      // 'startDate': this.validity,
-      // 'facebookUrl': this.facebook,
-      // 'facebookText':this.fbtext,
-      // 'youtubeUrl': this.youtube,
-      // 'youtubeText': this.youtext,
-      'isActive':true,
-      'scanned':0
-      // 'socialMedia_name':''
-    }
+
+    const data = new FormData();
+    data.append("user", "5ef247c92eafbd1ed045c9d7")
+    data.append("pdf_name", this.cname)
+    data.append("file", this.image)
     
     this.http.post("https://whispering-thicket-97767.herokuapp.com/pdf", data).subscribe(success=>{
     this.data1=success

@@ -15,28 +15,28 @@ export class Mp3Component implements OnInit {
   public fontColor: string;
   public linkColor: string;
   coupon: boolean = false;
-  couponcode: any="SALE25OFF";
+  couponcode: any = "SALE25OFF";
   heading: any = "Storewide Holiday Sale"
   public imagePath;
   offer: any = "25%"
   ImgSize: any = 240;
   desc: any = "Latest Song."
-  mp3:any
-  title:any="Stars"
-  info:any="The Reluctant"
+  mp3: any
+  title: any = "Stars"
+  info: any = "The Reluctant"
   Company: any = "Elle Boutique"
   imgURL: any = "https://cdn.pixabay.com/photo/2017/11/15/09/28/music-player-2951399__340.jpg";
-  btn:any="Buy Now";
-  validity:any="28 Jul 2020"
+  btn: any = "Buy Now";
+  validity: any = "28 Jul 2020"
   public message: string;
-  tnc:any=""
-  web:any="https://www.amazon.com/"
-  cname:any=""
-  btn1:any="QR Code";
+  tnc: any = ""
+  web: any = "https://www.amazon.com/"
+  cname: any = ""
+  btn1: any = "QR Code";
   logo;
-  img1:any="";
-  data:any;
-  spinner=false
+  img1: any = "";
+  data: any;
+  spinner = false
   ngOnInit() {
     this.backgroundColor = '#fff';
     this.fontColor = '#222';
@@ -49,16 +49,16 @@ export class Mp3Component implements OnInit {
    * @param {string} type
    * @param {string} color
    */
-  change2(){
+  change2() {
     console.log(this.img1)
-    if(this.btn1=="QR Code")
-    this.btn1="Preview"
+    if (this.btn1 == "QR Code")
+      this.btn1 = "Preview"
     else
-    this.btn1="QR Code"
+      this.btn1 = "QR Code"
   }
-  goToLink(){
+  goToLink() {
     window.open(this.web, "_blank");
-}
+  }
   public setColor(type: string, color: string) {
     switch (type) {
       case 'background':
@@ -76,11 +76,11 @@ export class Mp3Component implements OnInit {
 
   }
   couponc() {
-    if(this.coupon)
-    this.coupon=false;
+    if (this.coupon)
+      this.coupon = false;
     else
-    this.coupon=true;
-   
+      this.coupon = true;
+
   }
 
   formatLabel(value: number) {
@@ -95,8 +95,8 @@ export class Mp3Component implements OnInit {
     this.ImgSize = event.value;
     console.log()
   }
-  copyMessage(val: string){
-    
+  copyMessage(val: string) {
+
     const selBox = document.createElement('textarea');
     selBox.style.position = 'fixed';
     selBox.style.left = '0';
@@ -108,7 +108,7 @@ export class Mp3Component implements OnInit {
     selBox.select();
     document.execCommand('copy');
     document.body.removeChild(selBox);
-    this.btn="Copied"
+    this.btn = "Copied"
   }
 
   preview(files) {
@@ -127,21 +127,21 @@ export class Mp3Component implements OnInit {
     reader.onload = (_event) => {
       this.imgURL = reader.result;
     }
-  
+
   }
 
   changeFile(e) {
     console.log(e.target);
     if (e.target.name === 'image') {
       this.logo = e.target.files[0]
-    } else  if (e.target.name === 'mp3') {
+    } else if (e.target.name === 'mp3') {
       this.mp3 = e.target.files[0]
     }
   }
 
   navigate() {
-    this.spinner=true
-    this.img1=""
+    this.spinner = true
+    this.img1 = ""
     const data = {
       'user': '5ef247c92eafbd1ed045c9d7',
       'qrname': this.cname,
@@ -161,14 +161,14 @@ export class Mp3Component implements OnInit {
 
     this.mp3Service.saveMp3(formData).subscribe(data => {
       console.log(data)
-      this.data=data
-      this.img1=this.data.response.data
-      this.spinner=false
+      this.data = data
+      this.img1 = this.data.response.data
+      this.spinner = false
     }, err => {
       console.log(err)
-      this.spinner=false
+      this.spinner = false
     })
-    
+
   }
 
 }

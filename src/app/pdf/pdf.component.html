@@ -1,96 +1,100 @@
 <mat-progress-bar *ngIf="spinner" mode="indeterminate"></mat-progress-bar>
 <div class="body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 offset-md-1">
+                <div>
+                    <div style="margin-top: 10%;">
+                        <!-- <input type="text"> -->
 
-
-	<div class="container-fluid">
-
-
-		<div class="row">
-
-			<div class="col-md-6 offset-md-1">
-				<div>
-
-					<div style="margin-top: 10%;">
-						<!-- <input type="text"> -->
-
-						<!-- <mat-form-field>
+                        <!-- <mat-form-field>
             <input matInput placeholder="label" value="value">
           </mat-form-field> -->
-						<!-- <div class="text-center"> -->
+                        <!-- <div class="text-center"> -->
 
-						<!-- </div> -->
+                        <!-- </div> -->
+                    </div>
+                    <div class="text-center">
+                        <mat-form-field
+                            class="example-form-field"
+                            style="width: 400px;"
+                        >
+                            <mat-label
+                                ><span class="material-icons mr-2">
+                                    picture_as_pdf
+                                </span>
+                                PDF Name</mat-label
+                            >
+                            <input matInput type="text" [(ngModel)]="cname" />
+                            <button
+                                mat-button
+                                *ngIf="cname"
+                                matSuffix
+                                mat-icon-button
+                                aria-label="Clear"
+                                (click)="cname = ''"
+                            >
+                                <mat-icon>close</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </div>
+                    <div class="mt-2">
+                        <mat-accordion>
+                            <mat-expansion-panel
+                                (closed)="panelOpenState = true"
+                                (opened)="panelOpenState = false"
+                                [expanded]="true"
+                            >
+                                <mat-expansion-panel-header class="bg-dark">
+                                    <mat-panel-title class="">
+                                        PDF QR Generation
+                                    </mat-panel-title>
+                                    <mat-panel-description>
+                                        <span class="material-icons mr-2">
+                                            perm_device_information
+                                        </span>
+                                        Basic Information
+                                    </mat-panel-description>
+                                </mat-expansion-panel-header>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="container">
+                                            <label for="fname">PDF:</label>
+                                            <input
+                                                type="file"
+                                                id="pdf"
+                                                name="pdf"
+                                                class="ftext"
+                                                placeholder="Your audio here..."
+                                                (change)="changeFile($event)"
+                                                style="
+                                                    color: blue;
+                                                    border: 2px solid black;
+                                                "
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                    </div>
+                </div>
+                <div class="footer text-center">
+                    <button class="btn btn2 mt-5 mb-2" (click)="navigate()">
+                        Next
+                    </button>
+                </div>
+            </div>
 
-					</div>
-					<div class="text-center">
-						<mat-form-field class="example-form-field" style="width: 400px;">
+            <div class="col-md- 2 offset-md-1 mobile">
+                <!-- <mobile></mobile> -->
 
-							<mat-label><span class="material-icons mr-2">
-                                picture_as_pdf
-								</span> PDF Name</mat-label>
-							<input matInput type="text" [(ngModel)]="cname">
-							<button mat-button *ngIf="cname" matSuffix mat-icon-button aria-label="Clear"
-								(click)="cname=''">
-								<mat-icon>close</mat-icon>
-							</button>
-						</mat-form-field>
-					</div>
-					<div class="mt-2">
-						<mat-accordion>
-							<mat-expansion-panel (closed)="panelOpenState = true" (opened)="panelOpenState = false" [expanded]="true">
-								<mat-expansion-panel-header class="bg-dark">
-									<mat-panel-title class="">
-										PDF QR Generation
-									</mat-panel-title>
-									<mat-panel-description>
-										<span class="material-icons mr-2">
-											perm_device_information
-										</span> Basic Information
-
-									</mat-panel-description>
-								</mat-expansion-panel-header>
-								<div class="card">
-									<div class="card-body">
-
-										<div class="container">
-									
-												<label for="fname">PDF:</label>
-												<input type="file" id="pdf" name="pdf" class="ftext"
-													placeholder="Your audio here..." [(ngModel)]="pdf"
-													style="color: blue; border: 2px solid black;">
-							
-										
-										</div>
-									</div>
-								</div>
-							</mat-expansion-panel>
-					
-
-						</mat-accordion>
-					</div>
-					
-
-
-				
-				
-				</div>
-				<div class="footer text-center">
-					<button class="btn btn2 mt-5 mb-2" (click)="navigate()">Next</button>
-					
-				</div>
-			
-			</div>
-
-			<div class="col-md- 2 offset-md-1 mobile">
-				<!-- <mobile></mobile> -->
-
-
-				<!-- <button class="badge badge-pill badge-primary"></button>
+                <!-- <button class="badge badge-pill badge-primary"></button>
           <button class="badge badge-pill badge-primary">QR Code</button>
         </span> -->
 
-
-				<div class="card-body" style="position:fixed; ">
-					<!-- <div class="form-inline">
+                <div class="card-body" style="position: fixed;">
+                    <!-- <div class="form-inline">
         <div class="box-3 ">
           <div class="btn3 btn-three">
             <span (click)="change2()" >{{btn1}}</span>
@@ -100,82 +104,110 @@
       
        </div> -->
 
-					<div class="smartphone" style="background-color: rgb(68, 127, 182);position:fixed;">
+                    <div
+                        class="smartphone"
+                        style="
+                            background-color: rgb(68, 127, 182);
+                            position: fixed;
+                        "
+                    >
+                        <ng-container *ngIf="!img1">
+                            <mat-spinner
+                                class="spinner"
+                                *ngIf="spinner"
+                            ></mat-spinner>
+                            <div *ngIf="!spinner">
+                                <div>
+                                    <div class="container main-content mt-4">
+                                        <div class="card">
+                                            <div
+                                                class="card-header bg-dark text-light"
+                                            >
+                                                <div class="row">
+                                                    <div class="col-md-10">
+                                                        <span>
+                                                            {{ company }}</span
+                                                        >
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <span
+                                                            class="material-icons share"
+                                                            style="
+                                                                position: static;
+                                                            "
+                                                        >
+                                                            share
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="background"
+                                                [ngStyle]="{
+                                                    background: backgroundColor
+                                                }"
+                                            >
+                                                <div>
+                                                    <img
+                                                        class="img"
+                                                        [style.width.px]="
+                                                            ImgSize
+                                                        "
+                                                        [src]="imgURL"
+                                                        *ngIf="imgURL"
+                                                    />
+                                                    <!-- <pdf-viewer [src]="pdfSrc" [render-text]="true" style="display: block;"></pdf-viewer>  -->
+                                                </div>
 
-					
-						<ng-container *ngIf="!img1">
-							<mat-spinner class="spinner" *ngIf="spinner"></mat-spinner>
-							<div *ngIf="!spinner">
-								<div >
-	
-									<div class="container main-content mt-4 ">
-	
-										<div class="card">
-											<div class="card-header bg-dark text-light">
-												<div class="row">
-													<div class="col-md-10"><span> {{company}}</span></div>
-													<div class="col-md-2">
-														<span class="material-icons share" style="position:static;">
-															share
-														</span></div>
-												</div>
-											</div>
-											<div class="background" [ngStyle]="{background: backgroundColor}">
-												<div>
-													<img class="img" [style.width.px]="ImgSize" [src]="imgURL"
-														*ngIf="imgURL">
-														<!-- <pdf-viewer [src]="pdfSrc" [render-text]="true" style="display: block;"></pdf-viewer>  -->
-												</div>
-											
-	
-												<div class="card-body">
-													<h5 class="text-center font" [ngStyle]="{color: fontColor}">{{title}}</h5>
-													<div [ngStyle]="{color: fontColor}" class="text-center font2">
-														{{info}}
-														
-													</div>
-	
-													
-													  
-												</div>
-												
-											</div>
-											
-											<div class="text-center pt-4">
-												
-												<button class="btn btn-block text-light" [ngStyle]="{background: linkColor}"
-													(click)="couponc()"><span class="material-icons">
-														preview
-														</span>View Pdf</button>
-											</div>
-											
-										</div>
-									
-	
-									</div>
-									<div class="pt-1 text-center font">{{web}}</div>
-								</div>
-	
-							
-							</div>
-						
-						</ng-container>
-						<div class="text-center mt-5">
-							<img [src]="img1" alt="" *ngIf="img1">
-						  </div>
-						
-					</div>
+                                                <div class="card-body">
+                                                    <h5
+                                                        class="text-center font"
+                                                        [ngStyle]="{
+                                                            color: fontColor
+                                                        }"
+                                                    >
+                                                        {{ title }}
+                                                    </h5>
+                                                    <div
+                                                        [ngStyle]="{
+                                                            color: fontColor
+                                                        }"
+                                                        class="text-center font2"
+                                                    >
+                                                        {{ info }}
+                                                    </div>
+                                                </div>
+                                            </div>
 
-
-
-				</div>
-
-			
-
-			</div>
-
-		</div>
-
-	</div>
-
+                                            <div class="text-center pt-4">
+                                                <button
+                                                    class="btn btn-block text-light"
+                                                    [ngStyle]="{
+                                                        background: linkColor
+                                                    }"
+                                                    (click)="couponc()"
+                                                >
+                                                    <span
+                                                        class="material-icons"
+                                                    >
+                                                        preview </span
+                                                    >View Pdf
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pt-1 text-center font">
+                                        {{ web }}
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                        <div class="text-center mt-5">
+                            <img [src]="img1" alt="" *ngIf="img1" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
