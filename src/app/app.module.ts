@@ -8,7 +8,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ToastrModule } from "ngx-toastr";
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -91,6 +91,8 @@ import { ImagepComponent } from "./preview/imagep/imagep.component";
 import { FeedbackpComponent } from "./preview/feedbackp/feedbackp.component";
 import { EventpComponent } from "./preview/eventp/eventp.component";
 // import { WebComponent } from './preview/web/web.component';
+import { PathLocationStrategy } from '@angular/common';
+import { NavComponent } from './nav/nav.component';
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -131,6 +133,7 @@ import { EventpComponent } from "./preview/eventp/eventp.component";
 		ImagepComponent,
 		FeedbackpComponent,
 		EventpComponent,
+		NavComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -177,9 +180,11 @@ import { EventpComponent } from "./preview/eventp/eventp.component";
 		NgbPaginationModule,
 		NgbAlertModule,
 		NgbModule,
+		Ng2SearchPipeModule,
 		ToastrModule.forRoot(), // ToastrModule added
 	],
-	providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+	providers: [{ provide: LocationStrategy, useClass:  PathLocationStrategy}],
+	// PathLocationStrategy HashLocationStrategy
 	bootstrap: [AppComponent],
 })
 export class AppModule { }

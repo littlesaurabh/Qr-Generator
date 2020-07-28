@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./qrmenu.component.css']
 })
 export class QrmenuComponent implements OnInit {
-
+  searchText;
   constructor(private router:Router){}
   // {path:"mp3",component:Mp3Component},
   // {path:"business",component:BusinessComponent},
@@ -21,6 +21,13 @@ export class QrmenuComponent implements OnInit {
   // {path:"Video",component:VideoComponent},
   // {path:"CreateApp",component:CreateappComponent},
   // {path:"facebook",component:FacebookComponent}
+ selectChannel(channelNumber) {
+    let listItems = document.getElementById("cards").getElementsByTagName("div");
+    var length = listItems.length;
+    for (var i = 0; i < length; i++) {
+      listItems[i].className = i+1 == channelNumber ? "selected" : "";
+    }
+  }
   menu = [
 
     {
@@ -30,12 +37,12 @@ export class QrmenuComponent implements OnInit {
       url: 'website'
     },
 
-    // {
-    //   icon: "suitcase",
-    //   value: "Business Page",
-    //   desc: "Provide your company information",
-    //   url: 'business'
-    // },
+    {
+      icon: "suitcase",
+      value: "Business Page",
+      desc: "Provide your company information",
+      url: 'business'
+    },
 
     {
       icon: "group",
@@ -69,32 +76,32 @@ export class QrmenuComponent implements OnInit {
 
 
 
-    // {
-    //   icon: "pencil-square-o",
-    //   value: "Feedback",
-    //   desc: "Collect feedback and get rated",
-    //   url: 'feedback'
-    // },
+    {
+      icon: "pencil-square-o",
+      value: "Feedback",
+      desc: "Collect feedback and get rated",
+      url: 'feedback'
+    },
     {
       icon: "star",
       value: "Rating",
       desc: "Collect feedback and get rated",
       url: 'rating'
     },
-    // {
-    //   icon: "video-camera",
-    //   value: "Video",
-    //   desc: "Share one or more videos",
-    //   url: 'video'
-    // },
+    {
+      icon: "video-camera",
+      value: "Video",
+      desc: "Share one or more videos",
+      url: 'video'
+    },
 
 
-    // {
-    //   icon: "calendar-check-o",
-    //   value: "Event",
-    //   desc: "Promote your event",
-    //   url: 'event'
-    // },
+    {
+      icon: "calendar-check-o",
+      value: "Event",
+      desc: "Promote your event",
+      url: 'event'
+    },
 
 
     {
@@ -122,18 +129,19 @@ export class QrmenuComponent implements OnInit {
       desc: "Play an audio file",
       url: 'mp3'
     },
-    // {
-    //   icon: "picture-o",
-    //   value: "Images",
-    //   desc: "Show a series of photo",
-    //   url: 'images'
-    // }
+    {
+      icon: "picture-o",
+      value: "Images",
+      desc: "Show a series of photo",
+      url: 'images'
+    }
 
 
 
   ]
   ngOnInit() {
   }
+  
  url:any;
   nav(url){
     console.log(url)

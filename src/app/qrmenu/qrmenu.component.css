@@ -72,6 +72,14 @@
     font-size: larger;
   
  }
+ .ButtonState:focus {
+  /* outline: 0; */
+  border: 10px solid gold;
+}
+.selected {
+  color: blue;
+  border-left: 4px solid blue;
+}
  .btn2{
    margin-bottom: 0px;
   background-color: #90c52d;
@@ -88,7 +96,11 @@
   font-size: 20px; 
   font-family: monospace;
  }
+ 
  @media screen and (max-width: 600px) {
+   .row-icon,.text-icon{
+     text-align: center;
+   }
   .mobile1 {
     visibility: hidden;
     /* clear: both;
@@ -106,5 +118,18 @@
     font-size: 15px;
     text-align: center;
    }
+ 
+}
+ @media screen and (max-width: 1600px) {
+ 
+  .mobile1 {
+    visibility: hidden;
+    /* clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%; */
+    display: none;
+  }
+ 
  
 }
